@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaBold, FaItalic } from 'react-icons/fa';
 
 import {
     Nav,
@@ -14,6 +15,9 @@ const Navbar = () => {
                 <Bars />
 
                 <NavMenu>
+                    <NavLink style={{fontStyle: 'italic', fontSize:'xxx-large', fontFamily: 'Gill Sans'}} to='https://github.com/Keiaus/Mentows' activeStyle>
+                        M
+                    </NavLink>
                     <NavLink to='/about' activeStyle>
                         About
                     </NavLink>
@@ -26,7 +30,7 @@ const Navbar = () => {
                     <NavLink to='/documentation' activeStyle>
                         Docs
                     </NavLink>
-                    <NavLink to='/login' activeStyle>
+                    <NavLink style={{marginLeft: '300px'}} to='/login' activeStyle>
                         Log In
                     </NavLink>
                 </NavMenu>

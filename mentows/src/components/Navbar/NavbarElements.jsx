@@ -16,7 +16,7 @@ export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0 2rem;
     height: 100%;
     cursor: pointer;
     &.active {
@@ -46,32 +46,5 @@ export const NavMenu = styled.div `
     @media screen and (max-width: 768px)
     {
         display: none;
-    }
-`;
-
-export const NavBtn = styled.nav`
-    display: flex;
-    align-items: center:
-    margin-right: 24px;
-    @media screen and (max-width: 768px)
-    {
-        display: none;
-    }
-`;
-
-export const NavBtnLink = styled(Link)`
-    padding: 10px 22px;
-    color: white;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    margin-left: 24px;
-    &:hover 
-    {
-        transition: all 0.2s ease-in-out;
-        background: skyblue;
-        color: black;
     }
 `;

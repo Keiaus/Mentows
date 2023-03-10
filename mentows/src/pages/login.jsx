@@ -5,11 +5,11 @@ const Login = () => {
         <div>
             style={{
                 display: 'flex',
-                justifyContent: 'Right',
-                alignItems: 'Right',
-                height: '100vh'
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                height: '100vh',
+                marginLeft: '100px'
             }}
-
             <h1>Log In</h1>
         </div>
     );
