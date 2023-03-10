@@ -1,2 +1,2 @@
 # Mentows
-Mentows is an internet hosting service for Astronomers. It provides an environment for data entries and new discoveries that come to mind. 
+Mentows is an internet hosting service for Astronomers. It's collaborative environment allows scientists to review hubble data, document new discoveries, and much more. Think GitHub for Astronomers.
