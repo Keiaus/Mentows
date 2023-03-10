@@ -7,6 +7,7 @@ import About from './pages/about';
 import Documentation from './pages/documentation';
 import Downloads from './pages/downloads';
 import Topics from './pages/topics';
+import Login from './pages/login';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/documentation' exact component={Documentation} />
         <Route path='/downloads' exact component={Downloads} />
         <Route path='/topics' exact component={Topics} />
+        <Route path='/login' exact component={Login} />
       </Routes>
     </Router>
   );
