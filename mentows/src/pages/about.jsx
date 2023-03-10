@@ -12,7 +12,7 @@ const About = () => {
 
             <h1>Mentows is an internet hosting service for Astronomers. 
             It's collaborative environment allows scientists to review hubble data, document new discoveries, 
-            and much more. Think GitHub for Astronomers.</h1>
+            and much more. Think GitHub but for Astronomers.</h1>
         </div>
     );
 };
