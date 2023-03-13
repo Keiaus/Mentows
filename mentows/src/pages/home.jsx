@@ -2,23 +2,32 @@ import React from "react"
 
 const Home = () => {
 
-    // let array_of_pictures = [
-    //     albert = <img src="./assets/albert.png" alt="" />,
-    //     bill = <img src="./assets/bill.png" alt="" />,
-    //     neil = <img src="./assets/neil.png" alt="" />,
-    //     stephen = <img src="./assets/stephen.png" alt="" />
-    // ]
+    albert = document.createElement('img');
+    bill = document.createElement('img');
+    neil = document.createElement('img');
+    stephen = document.createElement('img');
 
-    // const picture_generator = Math.floor(Math.random() * array_of_pictures.length)
+    function event()
+    {
+        let array_of_pictures = [
+            albert.src = './assets/albert.png',
+            bill.src = './assets/bill.png',
+            neil.src = './assets/neil.png',
+            stephen.src = './assets/stephen.png'
+        ]
+    
+        const picture_generator = Math.floor(Math.random() * array_of_pictures.length)
+        
+    }
 
     return (
         <div style={{paddingLeft: '500px', marginTop: '40px', position: 'absolute'}}>
             <input style={{height: '40px', width: '500px', fontSize: '25px'}} type="text" name="search" id="search" placeholder="Search"/> <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-            {/* <div className="pictures" style={{margintop: '50px'}}>
-                <script>
-                    return picture_generator;
+            <div className="pictures" style={{margintop: '50px'}}>
+                <script type="text/javascript">
+                    document.getElementById('')
                 </script>
-            </div> */}
+            </div>
         </div>
         
     )
