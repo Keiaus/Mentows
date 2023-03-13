@@ -1,4 +1,5 @@
 import React from 'react';
+import mentows_logo from './assets/mentows_logo.png';
 
 import {
     Nav,
@@ -14,8 +15,8 @@ const Navbar = () => {
                 <Bars />
 
                 <NavMenu>
-                    <NavLink style={{fontStyle: 'italic', fontSize:'70px', fontFamily: 'Gill Sans'}} to='https://github.com/Keiaus/Mentows' activeStyle>
-                        M
+                    <NavLink style={{fontStyle: 'bold', fontSize:'70px', fontFamily: 'Gill Sans'}} to='https://github.com/Keiaus/Mentows' activeStyle>
+                        <a href='' className='mentows_logo'><img className='mentows_logo' src={mentows_logo}></img></a>                    
                     </NavLink>
                     <NavLink to='/about' activeStyle>
                         About
