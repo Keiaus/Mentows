@@ -10,8 +10,7 @@ Installation
 4. ```npm install react-router-dom```
 5. ```npm install --save styled-components```
 6. ```npm run dev```
-7. Open your web browser and visit ```localhost:5174```
-8. Enjoy Mentows
+7. Enjoy Mentows
 
 Hubble Data Features
 --- 
