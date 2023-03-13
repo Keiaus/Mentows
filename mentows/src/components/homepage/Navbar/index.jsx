@@ -12,11 +12,12 @@ const Navbar = () => {
     return (
         <>
             <Nav>
-                <Bars />
-
                 <NavMenu>
-                    <NavLink style={{fontStyle: 'bold', fontSize:'70px', fontFamily: 'Gill Sans'}} to='https://github.com/Keiaus/Mentows' activeStyle>
-                        <a href='' className='mentows_logo'><img className='mentows_logo' src={mentows_logo}></img></a>                    
+                    <NavLink to='https://github.com/Keiaus/Mentows' target={'_blank'} activeStyle>
+                            <img src={"./src/assets/mentows_logo_mac.png"} alt="" className='mentows_logo' style={{height: '85px', width:'150px'}}/>
+                    </NavLink>
+                    <NavLink to='/home' activeStyle>
+                        Home
                     </NavLink>
                     <NavLink to='/about' activeStyle>
                         About
@@ -30,7 +31,7 @@ const Navbar = () => {
                     <NavLink to='/documentation' activeStyle>
                         Docs
                     </NavLink>
-                    <NavLink style={{marginLeft: '300px'}} to='/login' activeStyle>
+                    <NavLink style={{marginLeft: '70px'}} to='/login' activeStyle>
                         Log In
                     </NavLink>
                 </NavMenu>
