@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/homepage/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Home from './pages';
-import About from './pages/about.jsx';
+import Home from './pages/home';
+import About from './pages/about';
 import Documentation from './pages/documentation';
 import Downloads from './pages/downloads';
 import Topics from './pages/topics';
@@ -15,14 +15,12 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        {/* <Route path='/' exact component={Home} /> */}
-        {/* <Switch> */}
-          <Route path='/about' exact component={About} />
-          <Route path='/documentation' exact component={Documentation} />
-          <Route path='/downloads' exact component={Downloads} />
-          <Route path='/topics' exact component={Topics} />
-          <Route path='/login' exact component={Login} />
-        {/* </Switch> */}
+          <Route path='/home' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/documentation' element={<Documentation/>} />
+          <Route path='/downloads' element={<Downloads/>} />
+          <Route path='/topics' element={<Topics/>} />
+          <Route path='/login' element={<Login/>} />
       </Routes>
     </Router>
   );
