@@ -1,10 +1,8 @@
 import React from 'react';
-import mentows_logo from './assets/mentows_logo.png';
 
 import {
     Nav,
     NavLink,
-    Bars,
     NavMenu,
 } from './NavbarElements';
 
