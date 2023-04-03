@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 
-const albert = './assets/albert.png';
-const bill = './assets/bill.png';
-const neil = './assets/neil.png';
-const stephen = './assets/stephen.png';
+const albert = './src/assets/albert.png';
+const bill = './src/assets/bill.png';
+const neil = './src/assets/neil.png';
+const stephen = './src/assets/stephen.png';
 
 const random_pictures = [
     albert, bill, neil, stephen
@@ -23,8 +23,8 @@ const Home = () => {
     }, []);
 
     const quotes = [
-        "Insanity: doing the same thing over and over again and expecting different results",
-        "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that",
+        "Insanity: doing the same thing over and over again and expecting different results", 
+        "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that", 
         "It's fun to do the impossible",
         "The end doesn't justify the means",
         "Everything negative - pressure, challenges - is all an opportunity for you to rise",
@@ -38,15 +38,21 @@ const Home = () => {
     ];
     
     const generateRandomQuote = Math.floor(Math.random() * quotes.length);
-
+    
 
     return (
         <div id="home-container">
             <p style={{fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center'}}>
                 {quotes[generateRandomQuote]}
             </p>
-
-            <img src={picture} alt="" style={{fontSize:'300px'}}/>
+            <img src={picture} alt="" style={{height: '200px', width: '200px', display:'block', margin:'auto'}}/>
+            
+            <div id="searchbar" style={{textAlign:'center', marginTop: '50px'}}>
+                {/* This form navigates to a page based on search entry */}
+                <form action="" method="get">
+                <input type="text" placeholder="Search..." style={{height:'50px', width:'600px', fontSize:'30px'}}/><button style={{fontSize:'30px', marginLeft:'50px'}}>Search</button>
+                </form>
+            </div>
         </div>
     )
 }
