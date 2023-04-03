@@ -1,6 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+
+const albert = './assets/albert.png';
+const bill = './assets/bill.png';
+const neil = './assets/neil.png';
+const stephen = './assets/stephen.png';
+
+const random_pictures = [
+    albert, bill, neil, stephen
+];
+
+const get_random_picture = () => {
+    const picture_generator = Math.floor(Math.random() * random_pictures.length)
+    return random_pictures[picture_generator];
+};
 
 const Home = () => {
+    const [picture, set_picture] = useState("");
+
+    useEffect(() => {
+        const random_picture = get_random_picture();
+        set_picture(random_picture);
+    }, []);
 
     const quotes = [
         "Insanity: doing the same thing over and over again and expecting different results",
@@ -18,35 +38,16 @@ const Home = () => {
     ];
     
     const generateRandomQuote = Math.floor(Math.random() * quotes.length);
-    document.getElementsByClassName
 
-    let albert = './assets/albert.png';
-    let bill = './assets/bill.png';
-    let neil = './assets/neil.png';
-    let stephen = './assets/stephen.png';
-    
-    const array_of_pictures = [
-        albert, bill, neil, stephen
-    ]
-
-    const picture_generator = Math.floor(Math.random() * array_of_pictures.length)
-    array_of_pictures[picture_generator];
 
     return (
-        <div style={{display:'flex', alignItems: 'center', marginTop: '200px', justifyContent: 'center'}}>
-            <div className="quotes" style={{marginTop: '20px', fontSize: 'x-large', color: 'white'}}>
-                script={{
-                    generateRandomQuote
-                }}
-            </div>
-            <input style={{height: '40px', width: '500px', fontSize: '25px'}} type="text" name="search" id="search" placeholder="Search"/> <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-            <div className="pictures" style={{margintop: '50px'}}>
-                script={{
-                    picture_generator
-                }}
-            </div>
+        <div id="home-container">
+            <p style={{fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center'}}>
+                {quotes[generateRandomQuote]}
+            </p>
+
+            <img src={picture} alt="" style={{fontSize:'300px'}}/>
         </div>
-        
     )
 }
 
