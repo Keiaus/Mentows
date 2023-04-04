@@ -8,6 +8,7 @@ import Documentation from './pages/documentation';
 import Downloads from './pages/downloads';
 import Topics from './pages/topics';
 import Login from './pages/login';
+import SignUp from './pages/signup';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/downloads' element={<Downloads/>} />
           <Route path='/topics' element={<Topics/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/signup' element={<SignUp/>} />
       </Routes>
     </Router>
   );

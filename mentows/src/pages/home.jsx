@@ -50,7 +50,7 @@ const Home = () => {
             <div id="searchbar" style={{textAlign:'center', marginTop: '50px'}}>
                 {/* This form navigates to a page based on search entry */}
                 <form action="" method="get">
-                <input type="text" placeholder="Search..." style={{height:'50px', width:'600px', fontSize:'30px'}}/><button style={{fontSize:'30px', marginLeft:'50px'}}>Search</button>
+                <input type="text" placeholder="Search..." style={{height:'50px', width:'600px', fontSize:'30px'}}/><button style={{fontSize:'39px', marginLeft:'50px'}}>Search</button>
                 </form>
             </div>
         </div>
