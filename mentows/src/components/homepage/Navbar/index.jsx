@@ -29,11 +29,11 @@ const Navbar = () => {
                     <NavLink to='/documentation' activeStyle>
                         Docs
                     </NavLink>
-                    <NavLink style={{marginLeft: '70px'}} to='/login' activeStyle>
-                        Log In
+                    <NavLink style={{paddingLeft:'240px'}} to='/login' activeStyle>
+                        Login
                     </NavLink>
-                    <NavLink style={{marginLeft: '80px'}} to='/signup' activeStyle>
-                        Sign Up
+                    <NavLink to='/signup' activeStyle>
+                        Signup
                     </NavLink>
                 </NavMenu>
             </Nav>

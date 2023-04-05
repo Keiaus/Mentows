@@ -42,11 +42,13 @@ const Home = () => {
 
     return (
         <div id="home-container">
+            <title>Home</title>
             <p style={{fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center'}}>
                 {quotes[generateRandomQuote]}
             </p>
-            <img src={picture} alt="" style={{height: '200px', width: '200px', display:'block', margin:'auto'}}/>
-            
+            <div id="images" style={{marginTop:'50px'}}>
+                <img src={picture} alt="" style={{height: '200px', width: '200px', display:'block', margin:'auto'}}/>
+            </div>
             <div id="searchbar" style={{textAlign:'center', marginTop: '50px'}}>
                 {/* This form navigates to a page based on search entry */}
                 <form action="" method="get">

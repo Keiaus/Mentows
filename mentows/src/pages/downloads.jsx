@@ -3,14 +3,8 @@ import React from 'react';
 const Downloads = () => {
     return (
         <div>
-            style={{
-                display: 'flex',
-                justifyContent: 'Right',
-                alignItems: 'Right',
-                height: '100vh'
-            }}
-
-            <h1>Downloadable content goes here</h1>
+            <title>Downlaods</title>
+            <p style={{textAlign:'center'}}>Downloadable content goes here</p>
         </div>
     );
 };

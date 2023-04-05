@@ -4,14 +4,9 @@ const Login = () => {
     
     return (
         <div>
-            style={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                alignItems: 'center',
-                height: '100vh',
-                marginLeft: '100px'
-            }}
-            <h1>Log In</h1>
+            <title>
+                Log In
+            </title>
         </div>
     );
 };
