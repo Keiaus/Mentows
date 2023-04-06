@@ -8,6 +8,8 @@ for (let year = currentYear; year >= 1900; year--) {
   years.push(year);
 }
 
+const yearLinks = years.map(year => `<a href="#">${year}</a>`);
+
 const SignUp = () => {
     
     return (
@@ -85,7 +87,7 @@ const SignUp = () => {
                         <div class="dropdown3">
                             <button class="yearbtn">Year</button>
                             <div class="dropdown-content3">
-                                <a href="">{years.join('\n')}</a>
+                                {yearLinks.join('\n')}
                             </div>
                         </div>
                         <br />

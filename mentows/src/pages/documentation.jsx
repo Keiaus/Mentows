@@ -4,7 +4,7 @@ const Documentation = () => {
     return (
         <div>
             <title>Documentation</title>
-            <p style={{textAlign:'center'}}>Getting Started</p>
+            <p style={{textAlign:'center', fontSize:'50px', fontFamily:'bold'}}>Documentation</p>
         </div>
     );
 };

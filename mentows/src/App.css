@@ -40,7 +40,7 @@
   .dropdown:hover .dropdown-content {display: block;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .monthbtn {background-color: #3e8e41;}
+  .dropdown:hover .monthbtn {background-color: #000000;}
 
   /* #################################################################################################################################### */
 
@@ -86,7 +86,7 @@
 .dropdown2:hover .dropdown-content2 {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown2:hover .daybtn {background-color: #3e8e41;}
+.dropdown2:hover .daybtn {background-color: #000000;}
 
 /* #################################################################################################################################### */
 
@@ -110,7 +110,7 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 50px;
   max-height: 200px;
   overflow-y: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -132,4 +132,4 @@
 .dropdown3:hover .dropdown-content3 {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown3:hover .yearbtn {background-color: #3e8e41;}
+.dropdown3:hover .yearbtn {background-color: #000000;}

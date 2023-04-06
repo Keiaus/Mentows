@@ -4,7 +4,7 @@ const Downloads = () => {
     return (
         <div>
             <title>Downlaods</title>
-            <p style={{textAlign:'center'}}>Downloadable content goes here</p>
+            <p style={{textAlign:'center', fontSize:'50px', fontFamily:'bold'}}>Downloads</p>
         </div>
     );
 };

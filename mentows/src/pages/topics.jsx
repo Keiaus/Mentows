@@ -4,7 +4,7 @@ const Topics = () => {
     return (
         <div>
             <title>Topics</title>
-            <p style={{textAlign:'center'}}>Topics to learn about goes here</p>
+            <p style={{textAlign:'center', fontSize:'50px', fontFamily:'bold'}}>Topics</p>
         </div>
     );
 };
