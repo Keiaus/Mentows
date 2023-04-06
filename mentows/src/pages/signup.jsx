@@ -28,7 +28,7 @@ const SignUp = () => {
                         <br />
                         <label htmlFor="DOB" style={{fontSize:'30px'}}>Date of Birth</label>
                         <br />
-                        <div class="dropdown">
+                        <div class="dropdown" style={{paddingRight:'10px', marginRight:'10px', marginTop:'30px'}}>
                             <button class="monthbtn">Month</button>
                             <div class="dropdown-content">
                                 <a href="#">January</a>
@@ -92,7 +92,7 @@ const SignUp = () => {
                         </div>
                         <br />
                         <br />
-                        <button id='next' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'100px'}}>Next</button>
+                        <button id='next' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'50px', borderRadius:'3%'}}>Next</button>
                     </div>
                 </div>
             </div>

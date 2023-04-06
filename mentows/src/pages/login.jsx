@@ -16,7 +16,7 @@ const Login = () => {
                         <input type="password" name="password" placeholder='Password' id="password" style={{height:'40px', width:'340px', fontSize:'30px'}}/>
                         <br />
                         <br />
-                        <button id='submit' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'100px'}}>Login</button>
+                        <button id='submit' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'100px', borderRadius:'3%'}}>Login</button>
                     </div>
                 </div>
         </div>
