@@ -28,25 +28,26 @@ const SignUp = () => {
                         <br />
                         <label htmlFor="DOB" style={{fontSize:'30px'}}>Date of Birth</label>
                         <br />
-                        <div class="dropdown" style={{paddingRight:'10px', marginRight:'10px', marginTop:'30px'}}>
-                            <button class="monthbtn">Month</button>
-                            <div class="dropdown-content">
-                                <a href="#">January</a>
-                                <a href="#">February</a>
-                                <a href="#">March</a>
-                                <a href="#">April</a>
-                                <a href="#">May</a>
-                                <a href="#">June</a>
-                                <a href="#">July</a>
-                                <a href="#">August</a>
-                                <a href="#">September</a>
-                                <a href="#">October</a>
-                                <a href="#">November</a>
-                                <a href="#">December</a>
-                            </div>
+                        <div class="month" style={{paddingRight:'10px', marginRight:'10px', marginTop:'30px'}}>
+                            <select id='month-select' placeholder='Month' style={{width:'100px'}}>
+                                <label style={{fontSize:'200px'}}>Month</label>
+                                <option value=''></option>
+                                <option value='January'>January</option>
+                                <option value='February'>February</option>
+                                <option value='March'>March</option>
+                                <option value='April'>April</option>
+                                <option value='May'>May</option>
+                                <option value='June'>June</option>
+                                <option value='July'>July</option>
+                                <option value='August'>August</option>
+                                <option value='September'>September</option>
+                                <option value='October'>October</option>
+                                <option value='November'>November</option>
+                                <option value='December'>December</option>
+                            </select>
                         </div>
 
-                        <div class="dropdown2">
+                        {/* <div class="dropdown2">
                             <button class="daybtn">Day</button>
                             <div class="dropdown-content2">
                                 <a href="#">1</a>
@@ -91,7 +92,7 @@ const SignUp = () => {
                             </div>
                         </div>
                         <br />
-                        <br />
+                        <br /> */}
                         <button id='next' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'50px', borderRadius:'3%'}}>Next</button>
                     </div>
                 </div>
