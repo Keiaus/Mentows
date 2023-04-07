@@ -5,6 +5,7 @@ const Downloads = () => {
         <div>
             <title>Downlaods</title>
             <p style={{textAlign:'center', fontSize:'50px', fontFamily:'bold'}}>Downloads</p>
+            
         </div>
     );
 };

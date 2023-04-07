@@ -39,7 +39,6 @@ const Home = () => {
     
     const generateRandomQuote = Math.floor(Math.random() * quotes.length);
     
-
     return (
         <div id="home-container">
             <title>Home</title>
@@ -55,6 +54,11 @@ const Home = () => {
                 <input type="text" placeholder="Search..." style={{height:'50px', width:'600px', fontSize:'30px'}}/><button style={{fontSize:'39px', marginLeft:'50px'}}>Search</button>
                 </form>
             </div>
+            
+            <footer>
+                <p>Arthur: Keith Austin</p>
+            </footer>
+            
         </div>
     )
 }

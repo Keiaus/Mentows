@@ -2,13 +2,12 @@ import React from 'react';
 
 const date = new Date();
 const currentYear = date.getFullYear();
-const years = [];
 
 for (let year = currentYear; year >= 1900; year--) {
-  years.push(year);
+    const yearList = document.createElement('a');
+    yearList.innerHTML = `<a href="#">${year}</a>`;
+    // yearList = document.createElement(`<a href="#">${year}</a>`);
 }
-
-const yearLinks = years.map(year => `<a href="#">${year}</a>`);
 
 const SignUp = () => {
     
@@ -95,7 +94,7 @@ const SignUp = () => {
                                 <br />
                                 <select id='year-select' style={{width:'100px'}}>
                                     <option value=''></option>
-                                    <option value=''>{yearLinks}</option>
+                                    {/* <option value=''>{document.getElementById("year-select").appendChild(yearList)}</option> */}
                                 </select>
                             </div>
 
