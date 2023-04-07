@@ -7,7 +7,7 @@ const Login = () => {
             <title>
                 Login
             </title>
-                <div id='style-container' style={{height:'500px', width:'500px', backgroundColor:'#007FFF', margin:'auto', borderRadius:'3%'}}>
+                <div id='style-container' style={{height:'500px', width:'500px', backgroundColor:'#007FFF', margin:'auto', borderRadius:'3%', marginTop:'120px'}}>
                     <div id='container' style={{textAlign:'center', marginTop:'100px'}}>
                         <h1 style={{textAlign:'center', paddingTop:'50px'}}>Login</h1>
                         <input type="text" name="username" placeholder='Username' id="username" style={{height:'40px', width:'340px', fontSize:'30px', marginTop:'50px'}}/>

@@ -17,7 +17,7 @@ const SignUp = () => {
             <title>
                 Signup
             </title>
-                <div id='style-container' style={{height:'650px', width:'500px', backgroundColor:'#007FFF', margin:'auto', borderRadius:'3%'}}>
+                <div id='style-container' style={{height:'650px', width:'500px', backgroundColor:'#007FFF', margin:'auto', borderRadius:'3%', marginTop:'120px'}}>
                     <div id='container' style={{textAlign:'center', marginTop:'50px'}}>
                         <h1 style={{textAlign:'center', paddingTop:'50px'}}>Signup</h1>
                         <input type="text" name="name" placeholder='Name' id="name" style={{height:'40px', width:'340px', fontSize:'30px', marginTop:'10px'}}/>
