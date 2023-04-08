@@ -40,26 +40,31 @@ const Home = () => {
     const generateRandomQuote = Math.floor(Math.random() * quotes.length);
     
     return (
-        <div id="home-container">
-            <title>Home</title>
-            <p style={{fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center'}}>
-                {quotes[generateRandomQuote]}
-            </p>
-            <div id="images" style={{marginTop:'50px'}}>
-                <img src={picture} alt="" style={{height: '200px', width: '200px', display:'block', margin:'auto'}}/>
+        <body>
+            <div id="home-container">
+                <title>Home</title>
+                <p style={{fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center'}}>
+                    {quotes[generateRandomQuote]}
+                </p>
+                <div id="images" style={{marginTop:'50px'}}>
+                    <img src={picture} alt="" style={{height: '200px', width: '200px', display:'block', margin:'auto'}}/>
+                </div>
+                <div id="searchbar" style={{textAlign:'center', marginTop: '50px', marginLeft:'155px'}}>
+                    {/* This form navigates to a page based on search entry */}
+                    <form action="" method="get">
+                        <input type="text" style={{height:'40px', width:'400px', fontSize:'20px'}}/><button style={{fontSize:'15px', marginLeft:'50px'}}>Mentows Search</button>
+                    </form>
+                </div>
+                
+                <footer id="site-footer" style={{margin:'auto', textAlign:'center', bottom:'0px', padding:'5px', position:'absolute', overflow:'hidden'}}> 
+                    <small>
+                        <p>Arthur: Keith Austin</p>
+                    </small> 
+                </footer>
+                
+                
             </div>
-            <div id="searchbar" style={{textAlign:'center', marginTop: '50px'}}>
-                {/* This form navigates to a page based on search entry */}
-                <form action="" method="get">
-                <input type="text" placeholder="Search..." style={{height:'50px', width:'600px', fontSize:'30px'}}/><button style={{fontSize:'39px', marginLeft:'50px'}}>Search</button>
-                </form>
-            </div>
-            
-            <footer>
-                <p>Arthur: Keith Austin</p>
-            </footer>
-            
-        </div>
+        </body>
     )
 }
 

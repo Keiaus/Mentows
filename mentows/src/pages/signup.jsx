@@ -1,17 +1,9 @@
 import React from 'react';
 
-const date = new Date();
-const currentYear = date.getFullYear();
-
-for (let year = currentYear; year >= 1900; year--) {
-    const yearList = document.createElement('a');
-    yearList.innerHTML = `<a href="#">${year}</a>`;
-    // yearList = document.createElement(`<a href="#">${year}</a>`);
-}
-
 const SignUp = () => {
     
     return (
+        <body>
         <div>
             <title>
                 Signup
@@ -33,7 +25,7 @@ const SignUp = () => {
                             <div class="month" style={{paddingRight:'10px'}}>
                                 <label style={{fontSize:'15px'}}>Month</label>
                                 <br />
-                                <select id='month-select' style={{width:'100px'}}>
+                                <select id='month-select' style={{width:'120px', height:'50px', fontSize:'20px'}}>
                                     <option value=''></option>
                                     <option value='January'>January</option>
                                     <option value='February'>February</option>
@@ -53,7 +45,7 @@ const SignUp = () => {
                             <div class="day" style={{paddingRight:'10px'}}>
                                 <label style={{fontSize:'15px'}}>Day</label>
                                 <br />
-                                <select id='day-select' style={{width:'100px'}}>
+                                <select id='day-select' style={{width:'75px', height:'50px', fontSize:'20px'}}>
                                     <option value=''></option>
                                     <option value='one'>1</option>
                                     <option value='two'>2</option>
@@ -92,9 +84,19 @@ const SignUp = () => {
                             <div class="year" style={{paddingRight:'10px'}}>
                                 <label style={{fontSize:'15px'}}>Year</label>
                                 <br />
-                                <select id='year-select' style={{width:'100px'}}>
-                                    <option value=''></option>
-                                    {/* <option value=''>{document.getElementById("year-select").appendChild(yearList)}</option> */}
+                                <select style={{width:'75px', height:'50px', fontSize:'20px'}} >
+                                <option value=''></option>
+                                    {(() => {
+                                        const date = new Date();
+                                        const currentYear = date.getFullYear();
+                                        const options = [];
+
+                                        for (let year = currentYear; year >= 1900; year--) {
+                                            options.push(<option key={year} value={year}>{year}</option>);
+                                        }
+
+                                        return options;
+                                    })()}
                                 </select>
                             </div>
 
@@ -106,6 +108,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+        </body>
     );
 };
 
