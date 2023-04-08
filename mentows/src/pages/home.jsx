@@ -56,7 +56,7 @@ const Home = () => {
                     </form>
                 </div>
                 
-                <footer id="site-footer" style={{margin:'auto', textAlign:'center', bottom:'0px', padding:'5px', position:'absolute', overflow:'hidden'}}> 
+                <footer id="site-footer" style={{margin:'auto', textAlign:'center', bottom:'0px', padding:'5px', position:'fixed', overflow:'hidden', bottom:'0', left:'0', right:'0'}}> 
                     <small>
                         <p>Arthur: Keith Austin</p>
                     </small> 
@@ -65,6 +65,7 @@ const Home = () => {
                 
             </div>
         </body>
+        
     )
 }
 

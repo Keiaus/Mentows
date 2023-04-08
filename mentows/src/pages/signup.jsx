@@ -8,6 +8,7 @@ const SignUp = () => {
             <title>
                 Signup
             </title>
+            <form>
                 <div id='style-container' style={{height:'650px', width:'500px', backgroundColor:'#007FFF', margin:'auto', borderRadius:'3%', marginTop:'120px'}}>
                     <div id='container' style={{textAlign:'center', marginTop:'50px'}}>
                         <h1 style={{textAlign:'center', paddingTop:'50px'}}>Signup</h1>
@@ -92,7 +93,7 @@ const SignUp = () => {
                                         const options = [];
 
                                         for (let year = currentYear; year >= 1900; year--) {
-                                            options.push(<option key={year} value={year}>{year}</option>);
+                                            options.push(<option id='year-select' key={year} value={year}>{year}</option>);
                                         }
 
                                         return options;
@@ -107,6 +108,7 @@ const SignUp = () => {
                             </div>
                     </div>
                 </div>
+                </form>
             </div>
         </body>
     );
