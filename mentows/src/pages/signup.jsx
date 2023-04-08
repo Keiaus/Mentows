@@ -10,7 +10,7 @@ const SignUp = () => {
                 Signup
             </title>
            
-                <div id='style-container' style={{height:'650px', width:'500px', backgroundColor:'whitesmoke', margin:'auto', borderRadius:'3%', marginTop:'50px'}}>
+                <div id='style-container' style={{height:'700px', width:'500px', backgroundColor:'whitesmoke', margin:'auto', borderRadius:'3%', marginTop:'50px'}}>
                     <div id='container' style={{textAlign:'center', marginTop:'50px'}}>
                         <h1 style={{textAlign:'center', paddingTop:'50px', color:'black'}}>Signup</h1>
                         <form id='name-form'>
@@ -114,8 +114,10 @@ const SignUp = () => {
 
                         </div>
                         <br />
-                            <div style={{marginTop:'50px'}}>
-                                <button id='next' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'50px', borderRadius:'3%'}}>Next</button>
+                            <div style={{marginTop:'10px'}}>
+                                <form id='next-form'>
+                                    <button id='next' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'50px', borderRadius:'3%'}}>Next</button>
+                                </form>
                             </div>
                     </div>
                 </div>
