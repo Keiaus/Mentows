@@ -4,14 +4,15 @@ const SignUp = () => {
     
     return (
         <body>
+        
         <div>
             <title>
                 Signup
             </title>
             <form>
-                <div id='style-container' style={{height:'650px', width:'500px', backgroundColor:'#007FFF', margin:'auto', borderRadius:'3%', marginTop:'120px'}}>
+                <div id='style-container' style={{height:'650px', width:'500px', backgroundColor:'whitesmoke', margin:'auto', borderRadius:'3%', marginTop:'50px'}}>
                     <div id='container' style={{textAlign:'center', marginTop:'50px'}}>
-                        <h1 style={{textAlign:'center', paddingTop:'50px'}}>Signup</h1>
+                        <h1 style={{textAlign:'center', paddingTop:'50px', color:'black'}}>Signup</h1>
                         <input type="text" name="name" placeholder='Name' id="name" style={{height:'40px', width:'340px', fontSize:'30px', marginTop:'10px'}}/>
                         <br />
                         <br />
@@ -19,12 +20,12 @@ const SignUp = () => {
                         <br />
                         <br />
                             <div style={{marginTop:'50px'}}>
-                                <label htmlFor="DOB" style={{fontSize:'30px'}}>Date of Birth</label>
+                                <label htmlFor="DOB" style={{fontSize:'30px', color:'black'}}>Date of Birth</label>
                             </div>
                         <br />
                         <div id='selecion' style={{display:'inline-flex', textAlign:'center', marginTop:'10px'}}>
                             <div class="month" style={{paddingRight:'10px'}}>
-                                <label style={{fontSize:'15px'}}>Month</label>
+                                <label style={{fontSize:'15px', color:'black'}}>Month</label>
                                 <br />
                                 <select id='month-select' style={{width:'120px', height:'50px', fontSize:'20px'}}>
                                     <option value=''></option>
@@ -44,7 +45,7 @@ const SignUp = () => {
                             </div>
 
                             <div class="day" style={{paddingRight:'10px'}}>
-                                <label style={{fontSize:'15px'}}>Day</label>
+                                <label style={{fontSize:'15px', color:'black'}}>Day</label>
                                 <br />
                                 <select id='day-select' style={{width:'75px', height:'50px', fontSize:'20px'}}>
                                     <option value=''></option>
@@ -83,7 +84,7 @@ const SignUp = () => {
                             </div>
 
                             <div class="year" style={{paddingRight:'10px'}}>
-                                <label style={{fontSize:'15px'}}>Year</label>
+                                <label style={{fontSize:'15px', color:'black'}}>Year</label>
                                 <br />
                                 <select style={{width:'75px', height:'50px', fontSize:'20px'}} >
                                 <option value=''></option>
