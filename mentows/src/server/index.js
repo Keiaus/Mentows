@@ -10,9 +10,13 @@ app.use(express.json());
 // Routes
 
 // create an account
-app.post("/newaccount", (req,res) => {
-    
-})
+app.post("/newaccount", async(req, res) => {
+    try {
+        console.log(req.body)
+    } catch (error) {
+        console.error(error.message);
+    }
+});
 
 // login to an account
 
