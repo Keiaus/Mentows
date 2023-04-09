@@ -10,7 +10,7 @@ const SignUp = () => {
                 Signup
             </title>
            
-                <div id='style-container' style={{height:'700px', width:'500px', backgroundColor:'whitesmoke', margin:'auto', borderRadius:'3%', marginTop:'50px'}}>
+                <div id='style-container' style={{height:'630px', width:'500px', backgroundColor:'whitesmoke', margin:'auto', borderRadius:'3%', marginTop:'50px'}}>
                     <div id='container' style={{textAlign:'center', marginTop:'50px'}}>
                         <h1 style={{textAlign:'center', paddingTop:'50px', color:'black'}}>Signup</h1>
                         <form id='name-form'>
@@ -23,7 +23,7 @@ const SignUp = () => {
                         </form>
                         <br />
                         <br />
-                            <div style={{marginTop:'50px'}}>
+                            <div>
                                 <label htmlFor="DOB" style={{fontSize:'30px', color:'black'}}>Date of Birth</label>
                             </div>
                         <br />
