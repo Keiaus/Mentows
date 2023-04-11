@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 const SignUp = () => {
     
@@ -116,7 +117,22 @@ const SignUp = () => {
                         <br />
                             <div style={{marginTop:'10px'}}>
                                 <form id='next-form'>
-                                    <button id='next' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'50px', borderRadius:'3%'}}>Next</button>
+                                    {(() => {
+                                        nextClicked()
+                                        {
+                                            return (
+                                                <BrowserRouter>
+                                                    <Link to={{pathname:'./signup'}} smooth>
+                                                        <div id='next-clicked' style={{height:"300px", width:"400px", color:"red", marginBottom:'500px'}}>
+                                                            Welcome
+                                                        </div>
+                                                    </Link>
+                                                </BrowserRouter>
+                                                
+                                            )
+                                        }
+                                    })}
+                                    <button id='next' style={{height:'40px', width:'150px', fontSize:'30px', marginTop:'50px', borderRadius:'3%'}} onClick={() => this.nextClicked()}>Next</button>
                                 </form>
                             </div>
                     </div>
