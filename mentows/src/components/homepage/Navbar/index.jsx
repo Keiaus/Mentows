@@ -14,27 +14,31 @@ const Navbar = () => {
                     <NavLink to='https://github.com/Keiaus/Mentows' target={'_blank'} activeStyle>
                             <img src={"./src/assets/mentows_logo_mac.png"} alt="" className='mentows_logo' style={{height: '85px', width:'150px'}}/>
                     </NavLink>
-                    <NavLink to='/home' activeStyle>
+                    <NavLink to='/Home' activeStyle>
                         Home
                     </NavLink>
-                    <NavLink to='/about' activeStyle>
+                    <NavLink to='/About' activeStyle>
                         About
                     </NavLink>
-                    <NavLink to='/downloads' activeStyle>
+                    <NavLink to='/Downloads' activeStyle>
                         Downloads
                     </NavLink>
-                    <NavLink to='/topics' activeStyle>
+                    <NavLink to='/Topics' activeStyle>
                         Topics
                     </NavLink>
-                    <NavLink to='/documentation' activeStyle>
+                    <NavLink to='/Documentation' activeStyle>
                         Docs
                     </NavLink>
-                    <NavLink style={{paddingLeft:'240px'}} to='/login' activeStyle>
-                        Login
-                    </NavLink>
-                    <NavLink to='/signup' activeStyle>
-                        Signup
-                    </NavLink>
+                    <div style={{position:'absolute', right:'0', marginRight:'10px'}}>
+                        <NavLink to='/Login' activeStyle>
+                            Log in
+                        </NavLink>
+                    </div>
+                    <div style={{position:'absolute', right:'0', marginRight:'100px'}}>
+                        <NavLink to='/Signup' activeStyle>
+                            Sign up
+                        </NavLink>
+                    </div>
                 </NavMenu>
             </Nav>
         </>

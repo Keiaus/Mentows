@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCodeBranch} from '@fortawesome/free-solid-svg-icons'
+// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+// import {faCodeBranch} from '@fortawesome/free-solid-svg-icons'
 
 const albert = './src/assets/albert.png';
 const bill = './src/assets/bill.png';
@@ -59,9 +59,9 @@ const Home = () => {
                 </div>
                 
                 <footer id="site-footer" style={{margin:'auto', textAlign:'center', padding:'5px', position:'fixed', overflow:'hidden', bottom:'0', left:'0', right:'0'}}> 
-                    <div>
+                    {/* <div>
                         <FontAwesomeIcon icon={{faCodeBranch}} style={{color: "#ff7300", height:"400px", width:"400px"}} />
-                    </div>
+                    </div> */}
                 </footer>
                 
                 

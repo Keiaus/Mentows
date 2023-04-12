@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
-import SignupForm from '../components/Signup/SignupForm';
+import React,{useState} from 'react'
 
-const SignUp = () => {
-    const [isRegister, setIsRegister] = useState(false);
-    const registerHandler = (result) =>{
-        setIsRegister(result)
+function SignupForm(props) {
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const nameHandler = (event) => {
+        setName(event.target.value);
+    }
+    const phoneHandler = (event) => {
+        setPhone(event.target.value);
+    }
+    const formHandler = (event) => {
+        event.preventDefault();
+        console.log('clicked!');
+        props.isRegister(true);
     }
     return (
-        <>
-            <SignupForm isRegister = {registerHandler}/>
-            {
-                isRegister ? 
-                <div>
+        <form onSubmit={formHandler}>
+            <div>
                 <title>Sign up</title>
                 <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
-                    {/* <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
-                        <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Signup</h1>
+                    <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                        <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
 
                         <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '30px', marginTop: '10px' }} onChange={nameHandler} />
                         <br />
@@ -122,12 +127,11 @@ const SignUp = () => {
                             <button id='next' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%' }} onClick={() => nextClicked()}>Next</button>
 
                         </div>
-                    </div> */}
+                    </div>
                 </div>
-            </div> : <></>
-            }
-        </>
-    );
-};
+            </div>
+        </form>
+    )
+}
 
-export default SignUp;
+export default SignupForm
