@@ -14,7 +14,6 @@ const Login = () => {
                             <input type="text" name="username" placeholder='Username' id="username" style={{height:'40px', width:'340px', fontSize:'30px', marginTop:'50px'}}/>
                         </form>
                         <br />
-                        <br />
                         <form id='password-form'>
                             <input type="password" name="password" placeholder='Password' id="password" style={{height:'40px', width:'340px', fontSize:'30px'}}/>
                         </form>
