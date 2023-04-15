@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 function SignupForm(props) {
     const [name, setName] = useState('');

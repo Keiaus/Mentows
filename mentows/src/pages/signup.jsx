@@ -3,18 +3,18 @@ import SignupForm from '../components/Signup/SignupForm';
 
 const SignUp = () => {
     const [isRegister, setIsRegister] = useState(false);
-    const registerHandler = (result) =>{
+    const registerHandler = (result) => {
         setIsRegister(result)
     }
     return (
         <>
-            <SignupForm isRegister = {registerHandler}/>
+            <SignupForm isRegister={registerHandler} />
             {
-                isRegister ? 
-                <div>
-                <title>Sign up</title>
-                <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
-                    {/* <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                isRegister ?
+                    <div>
+                        <title>Sign up</title>
+                        <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                            {/* <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                         <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Signup</h1>
 
                         <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '30px', marginTop: '10px' }} onChange={nameHandler} />
@@ -123,8 +123,8 @@ const SignUp = () => {
 
                         </div>
                     </div> */}
-                </div>
-            </div> : <></>
+                        </div>
+                    </div> : <></>
             }
         </>
     );

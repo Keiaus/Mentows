@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // import {faCodeBranch} from '@fortawesome/free-solid-svg-icons'
 
@@ -25,8 +25,8 @@ const Home = () => {
     }, []);
 
     const quotes = [
-        "Insanity: doing the same thing over and over again and expecting different results", 
-        "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that", 
+        "Insanity: doing the same thing over and over again and expecting different results",
+        "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that",
         "It's fun to do the impossible",
         "The end doesn't justify the means",
         "Everything negative - pressure, challenges - is all an opportunity for you to rise",
@@ -38,36 +38,36 @@ const Home = () => {
         "Things may come to those who wait … but only the things left by those who hustle",
         "Someone was once in the same position as you and they made it out"
     ];
-    
+
     const generateRandomQuote = Math.floor(Math.random() * quotes.length);
-    
+
     return (
         <body>
             <div id="home-container">
                 <title>Home</title>
-                <p style={{fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center'}}>
+                <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center' }}>
                     {quotes[generateRandomQuote]}
                 </p>
-                <div id="images" style={{marginTop:'50px'}}>
-                    <img src={picture} alt="" style={{height: '200px', width: '200px', display:'block', margin:'auto'}}/>
+                <div id="images" style={{ marginTop: '50px' }}>
+                    <img src={picture} alt="" style={{ height: '200px', width: '200px', display: 'block', margin: 'auto' }} />
                 </div>
-                <div id="searchbar" style={{textAlign:'center', marginTop: '50px', marginLeft:'155px'}}>
+                <div id="searchbar" style={{ textAlign: 'center', marginTop: '50px', marginLeft: '155px' }}>
                     {/* This form navigates to a page based on search entry */}
                     <form action="" method="get">
-                        <input type="text" style={{height:'40px', width:'400px', fontSize:'20px'}}/><button style={{fontSize:'15px', marginLeft:'50px'}}>Mentows Search</button>
+                        <input type="text" style={{ height: '40px', width: '400px', fontSize: '20px' }} /><button style={{ fontSize: '15px', marginLeft: '50px' }}>Mentows Search</button>
                     </form>
                 </div>
-                
-                <footer id="site-footer" style={{margin:'auto', textAlign:'center', padding:'5px', position:'fixed', overflow:'hidden', bottom:'0', left:'0', right:'0'}}> 
+
+                <footer id="site-footer" style={{ margin: 'auto', textAlign: 'center', padding: '5px', position: 'fixed', overflow: 'hidden', bottom: '0', left: '0', right: '0' }}>
                     {/* <div>
                         <FontAwesomeIcon icon={{faCodeBranch}} style={{color: "#ff7300", height:"400px", width:"400px"}} />
                     </div> */}
                 </footer>
-                
-                
+
+
             </div>
         </body>
-        
+
     )
 }
 
