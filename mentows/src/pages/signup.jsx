@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 import SignupForm from '../components/Signup/SignupForm';
 
 const SignUp = () => {
-    const [isRegister, setIsRegister] = useState(false);
-    const registerHandler = (result) => {
-        setIsRegister(result)
+    // const [isRegister, setIsRegister] = useState(false);
+    const [confirmation, setConfirmation] = useState({});
+
+    const handleConfirmation = (event) => {
+        const { name, nameValue } = event.target;
+        const { phone, phoneValue } = event.target;
+        const { dob, dobValue } = event.target;
+        setConfirmation(beforeConfirmation => ({ ...beforeConfirmation, [name]:nameValue, [phone]:phoneValue, [dob]:dobValue }))
     }
+
     return (
-
-        <>
-            <SignupForm isRegister={registerHandler} />
-            {
-                // question mark = then, colon = else
-                isRegister ?
-                    <div><p>Welcome</p></div>
-                    : <></>
-
-            }
-        </>
+        <div>
+            <SignupForm confirmation={confirmation} onConfirmation={handleConfirmation}/>
+        </div>
     );
 };
 
