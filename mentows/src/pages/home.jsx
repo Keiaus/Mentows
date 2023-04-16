@@ -3,17 +3,26 @@ import React, { useState, useEffect } from "react";
 // import {faCodeBranch} from '@fortawesome/free-solid-svg-icons'
 
 const albert = './src/assets/albert.png';
+const abraham = './src/assets/abraham.png';
+const kobe = './src/assets/kobe.png';
 const bill = './src/assets/bill.png';
 const neil = './src/assets/neil.png';
 const stephen = './src/assets/stephen.png';
 const fridman = './src/assets/fridman.png';
+const george = './src/assets/george.png';
+const malcolm = './src/assets/malcolm.png';
 
 const random_pictures = [
-    { picture: albert, quote: "Insanity: doing the same thing over and over again and expecting different results" },
-    { picture: bill, quote: "Science is the best idea humans have ever had. The more people who embrace that idea, the better" },
-    { picture: neil, quote: "The good thing about science is that it's true whether or not you believe in it" },
-    { picture: stephen, quote: "Quiet people have the loudest minds" },
-    { picture: fridman, quote: "People need love more than they need advice. Most people know the right thing to do, they just need someone to believe in them" }
+    { picture: albert, quote: "Insanity: doing the same thing over and over again and expecting different results." },
+    { picture: bill, quote: "Science is the best idea humans have ever had. The more people who embrace that idea, the better." },
+    { picture: neil, quote: "The good thing about science is that it's true whether or not you believe in it." },
+    { picture: stephen, quote: "Quiet people have the loudest minds." },
+    { picture: fridman, quote: "People need love more than they need advice. Most people know the right thing to do, they just need someone to believe in them." },
+    { picture: abraham, quote: "Things may come to those who wait, but only the things left by those who hustle. " },
+    { picture: kobe, quote: "Great things come from hard work and perseverance. No excuses." },
+    { picture: george, quote: "You comply because you want it to end. But it's because of your compliance that it will never end." },
+    { picture: malcolm, quote: "A man who stands for nothing will fall for anything." }
+
 ];
 
 const get_random_picture = () => {
