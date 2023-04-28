@@ -53,11 +53,11 @@ const Home = () => {
                     <div id="images" style={{ marginTop: '50px' }}>
                         <img src={picture} alt="" style={{ height: '300px', width: '350px', display: 'block', margin: 'auto', borderRadius:'3px' }} />
                     </div>
-                    <div id="searchbar" style={{ textAlign: 'center', marginTop: '50px'}}>
+                    <div id="searchbar" style={{ textAlign: 'center', marginTop: '50px', alignContent:"center"}}>
                         {/* This form navigates to a page based on search entry */}
                         <form action="" method="get">
-                            <button style={{ fontSize: '15px', margin:"auto"}}><i class="fa-solid fa-atom fa-spin" style={{fontSize: "30px", color: "coral"}}></i></button>
-                            <input type="text" style={{ height: '40px', width: '400px', fontSize: '20px' }} />
+                            <input type="text" style={{height: '40px', width: '400px', fontSize: '20px'}} />
+                            <button style={{ fontSize: '15px', margin:"auto"}}><i class="fa-solid fa-atom fa-spin" style={{fontSize:"30px", color: "coral"}}></i></button>
                         </form>
                     </div>
 
