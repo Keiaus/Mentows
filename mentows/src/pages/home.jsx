@@ -47,10 +47,10 @@ const Home = () => {
                 <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center' }}>
                     {quote}
                 </p>
-                <div id="images" style={{ marginTop: '50px' }}>
+                <div id="images" style={{ marginTop: '80px' }}>
                     <img src={picture} alt="" style={{ height: '200px', width: '200px', display: 'block', margin: 'auto', borderRadius:'3px' }} />
                 </div>
-                <div id="searchbar" style={{ textAlign: 'center', marginTop: '50px', marginLeft: '155px' }}>
+                <div id="searchbar" style={{ textAlign: 'center', marginTop: '120px', marginLeft: '155px' }}>
                     {/* This form navigates to a page based on search entry */}
                     <form action="" method="get">
                         <input type="text" style={{ height: '40px', width: '400px', fontSize: '20px' }} /><button style={{ fontSize: '15px', marginLeft: '50px' }}>Mentows Search</button>

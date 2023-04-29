@@ -22,7 +22,7 @@ function SignupForm(props) {
         event.preventDefault();
         console.log('clicked!');
         props.isRegister(true);
-        setStep(step + 1);
+        // setStep(step + 1);
     }
 
     return (
@@ -127,7 +127,7 @@ function SignupForm(props) {
                             <br />
                             <div style={{ marginTop: '10px' }}>
 
-                                <button id='next' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%' }}>Next</button>
+                                <button id='next' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%'}}>Next</button>
 
                             </div>
                         </div>
