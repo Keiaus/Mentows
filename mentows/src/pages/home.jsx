@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import './../styles/App.css';
+
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // import {faCodeBranch} from '@fortawesome/free-solid-svg-icons'
 
@@ -44,25 +46,27 @@ const Home = () => {
         <body>
             <div id="home-container">
                 <title>Home</title>
-                <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center' }}>
-                    {quote}
-                </p>
-                <div id="images" style={{ marginTop: '80px' }}>
-                    <img src={picture} alt="" style={{ height: '200px', width: '200px', display: 'block', margin: 'auto', borderRadius:'3px' }} />
-                </div>
-                <div id="searchbar" style={{ textAlign: 'center', marginTop: '120px', marginLeft: '155px' }}>
-                    {/* This form navigates to a page based on search entry */}
-                    <form action="" method="get">
-                        <input type="text" style={{ height: '40px', width: '400px', fontSize: '20px' }} /><button style={{ fontSize: '15px', marginLeft: '50px' }}>Mentows Search</button>
-                    </form>
-                </div>
+                <div style={{margin:"auto"}}>
+                    <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center' }}>
+                        {quote}
+                    </p>
+                    <div id="images" style={{ marginTop: '50px' }}>
+                        <img src={picture} alt="" style={{ height: '300px', width: '350px', display: 'block', margin: 'auto', borderRadius:'3px' }} />
+                    </div>
+                    <div id="searchbar" style={{ textAlign: 'center', marginTop: '50px', alignContent:"center"}}>
+                        {/* This form navigates to a page based on search entry */}
+                        <form action="" method="get">
+                            <input type="text" style={{height: '40px', width: '400px', fontSize: '20px'}} />
+                            <button style={{ fontSize: '15px', margin:"auto"}}><i class="fa-solid fa-atom fa-spin" style={{fontSize:"30px", color: "coral"}}></i></button>
+                        </form>
+                    </div>
 
-                <footer id="site-footer" style={{ margin: 'auto', textAlign: 'center', padding: '5px', position: 'fixed', overflow: 'hidden', bottom: '0', left: '0', right: '0' }}>
-                    {/* <div>
-                        <FontAwesomeIcon icon={{faCodeBranch}} style={{color: "#ff7300", height:"400px", width:"400px"}} />
-                    </div> */}
-                </footer>
-
+                    <footer id="site-footer" style={{ margin: 'auto', textAlign: 'center', padding: '5px', position: 'fixed', overflow: 'hidden', bottom: '0', left: '0', right: '0' }}>
+                        {/* <div>
+                            <FontAwesomeIcon icon={{faCodeBranch}} style={{color: "#ff7300", height:"400px", width:"400px"}} />
+                        </div> */}
+                    </footer>
+                </div>
 
             </div>
         </body>
