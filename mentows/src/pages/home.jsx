@@ -47,17 +47,17 @@ const Home = () => {
             <div id="home-container">
                 <title>Home</title>
                 <div style={{margin:"auto"}}>
-                    <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center' }}>
+                    <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center', paddingTop:"50px", paddingBottom:"10px"}}>
                         {quote}
                     </p>
                     <div id="images" style={{ marginTop: '50px' }}>
-                        <img src={picture} alt="" style={{ height: '300px', width: '350px', display: 'block', margin: 'auto', borderRadius:'3px' }} />
+                        <img src={picture} alt="" style={{ height: '200px', width: '250px', display: 'block', margin: 'auto', borderRadius:'3px' }} />
                     </div>
-                    <div id="searchbar" style={{ textAlign: 'center', marginTop: '50px', alignContent:"center"}}>
+                    <div id="searchbar" style={{ textAlign: 'center', marginTop: '50px', alignContent:"center", paddingLeft:"50px"}}>
                         {/* This form navigates to a page based on search entry */}
                         <form action="" method="get">
-                            <input type="text" style={{height: '40px', width: '431px', fontSize: '20px', outline:"none"}} />
-                            <button style={{ fontSize: '15px', margin:"auto"}}><i className="fa-solid fa-atom fa-spin" style={{fontSize:"43px", color: "coral"}}></i></button>
+                            <input type="text" style={{height: '25px', width: '400px', fontSize: '20px', border:"none"}} />
+                            <button style={{ fontSize: '15px', margin:"auto", position:"absolute"}}><i className="fa-solid fa-atom fa-spin" style={{fontSize:"43px", color: "coral"}}></i></button>
                         </form>
                     </div>
 
