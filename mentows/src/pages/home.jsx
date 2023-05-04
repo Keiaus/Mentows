@@ -46,18 +46,18 @@ const Home = () => {
         <body>
             <div id="home-container">
                 <title>Home</title>
-                <div style={{margin:"auto"}}>
-                    <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center', paddingTop:"50px", paddingBottom:"10px"}}>
+                <div style={{ margin: "auto" }}>
+                    <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center', paddingTop: "50px", paddingBottom: "10px" }}>
                         {quote}
                     </p>
                     <div id="images" style={{ marginTop: '50px' }}>
-                        <img src={picture} alt="" style={{ height: '200px', width: '250px', display: 'block', margin: 'auto', borderRadius:'3px' }} />
+                        <img src={picture} alt="" style={{ height: '200px', width: '250px', display: 'block', margin: 'auto', borderRadius: '3px' }} />
                     </div>
-                    <div id="search" style={{textAlign:"center", paddingTop:"60px"}}>
+                    <div id="search" style={{ textAlign: "center", paddingTop: "60px" }}>
                         <form action="" method="get">
-                                <input type="text" style={{height: '50px', width: '500px', fontSize: '20px', border:"none", paddingLeft:"10px", borderRadius:"10px"}} />
-                                <br />
-                                <button type="submit" style={{fontSize:"20px", marginTop:"20px"}}>Search</button>
+                            <input type="text" style={{ height: '50px', width: '500px', fontSize: '20px', border: "none", paddingLeft: "10px", borderRadius: "10px" }} />
+                            <br />
+                            <button type="submit" style={{ fontSize: "20px", marginTop: "20px" }}>Search</button>
                         </form>
                     </div>
 
