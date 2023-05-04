@@ -1,5 +1,9 @@
 import { React, useState } from 'react'
 
+const dayInMonths = (month, year) => {
+    return new Date(year, month, 0).getDate();
+}
+
 const SignupForm = () => {
 
     const [name, setName] = useState('');
@@ -15,8 +19,8 @@ const SignupForm = () => {
     try {
         const btn = document.getElementById("next");
 
-        btn.addEventListener("click", (event) => {
-               
+        btn.addEventListener("click", () => {
+            return nextClicked();
         })
 
         const nextClicked = () => {
