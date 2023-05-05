@@ -1,9 +1,5 @@
 import { React, useState } from 'react'
 
-const dayInMonths = (month, year) => {
-    return new Date(year, month, 0).getDate();
-}
-
 const SignupForm = () => {
 
     const [name, setName] = useState('');
@@ -20,7 +16,7 @@ const SignupForm = () => {
         const btn = document.getElementById("next");
 
         btn.addEventListener("click", () => {
-            return nextClicked();
+            nextClicked();
         })
 
         const nextClicked = () => {
@@ -136,7 +132,7 @@ const SignupForm = () => {
                         </div>
                     </form>
                 </div>
-
+                
             )
         }
     } catch (error) {
@@ -256,6 +252,4 @@ const SignupForm = () => {
     )
 }
 
-
-
-export default SignupForm
+export default SignupForm;
