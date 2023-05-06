@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-const NextClicked = (props) => {
+const NextClicked = () => {
 
     return (
         <>

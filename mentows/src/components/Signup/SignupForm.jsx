@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { NextClicked } from './NextClicked.jsx'
+import NextClicked from './NextClicked.jsx';
 
 const SignupForm = () => {
 
@@ -115,7 +115,7 @@ const SignupForm = () => {
                             <br />
                             <div style={{ marginTop: '10px' }}>
 
-                                <button id='next1' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%' }} onClick={{  }}>Next</button>
+                                <button id='next1' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%' }} onClick={{ NextClicked }}>Next</button>
 
                             </div>
                         </div>
