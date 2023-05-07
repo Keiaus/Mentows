@@ -1,5 +1,4 @@
 import { React, useState } from 'react';
-import NextClicked from './NextClicked.jsx';
 
 const SignupForm = () => {
 
