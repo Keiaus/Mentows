@@ -1,29 +1,24 @@
 import { React, useState } from 'react';
+import NextClicked from './NextClicked';
 
 const SignupForm = () => {
 
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-
-    const nameHandler = (event) => {
-        setName(event.target.value);
-    }
-    const phoneHandler = (event) => {
-        setPhone(event.target.value);
-    }
+    const [phone, setPhone] = useState(''); // string
+    const [isClicked, setIsClicked] = useState(false); // false
 
     return (
         <div id='signup-page'>
-            <form>
+            <div>
                 <title>Sign up</title>
                 <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                     <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                         <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
 
-                        <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '30px', marginTop: '10px' }} onChange={nameHandler} />
+                        <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '30px', marginTop: '10px' }} onChange={(event) => setName(event.target.value)} />
                         <br />
                         <br />
-                        <input type="text" name="phone" placeholder='Phone' id="phone" style={{ height: '40px', width: '340px', fontSize: '30px' }} onChange={phoneHandler} />
+                        <input type="text" name="phone" placeholder='Phone' id="phone" style={{ height: '40px', width: '340px', fontSize: '30px' }} onChange={(event) => setPhone(event.target.value)} />
                         <br />
                         <br />
                         <div style={{ marginTop: "40px" }}>
@@ -112,15 +107,18 @@ const SignupForm = () => {
 
                             </div>
                             <br />
+                            {
+                                isClicked ? <NextClicked /> : <></>
+                            }
                             <div style={{ marginTop: '10px' }}>
 
-                                <button id='next1' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%' }} onClick={{ NextClicked }}>Next</button>
+                                <button type='submit' id='next1' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%' }} onClick={() => setIsClicked(true)}>Next</button>
 
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     )
 }
