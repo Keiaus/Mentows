@@ -118,5 +118,4 @@ function NextClicked() {
 
 }
 
-
 export default NextClicked;
