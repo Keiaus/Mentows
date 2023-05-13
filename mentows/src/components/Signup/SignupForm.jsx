@@ -7,11 +7,6 @@ const SignupForm = () => {
     const [phone, setPhone] = useState(''); // string
     const [isClicked, setIsClicked] = useState(false); // false
 
-    function buttonClicked(event) {
-        const nextPage = event.target.value;
-        setIsClicked([...isClicked, nextPage]);
-    }
-
     return (
         <form action="./NextClicked.jsx" method="get">
             <div id='signup-page'>
