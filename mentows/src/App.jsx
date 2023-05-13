@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/App.css';
 import Navbar from './components/homepage/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -13,6 +13,7 @@ import SignUp from './pages/Signup';
 function App() {
 
   return (
+    <div className='App'>
     <Router>
       <Navbar />
       <Routes>
@@ -26,6 +27,7 @@ function App() {
         <Route path='/Signup' element={<SignUp />} />
       </Routes>
     </Router>
+    </div>
   );
 }
 

@@ -1,14 +1,25 @@
-import { React, useEffect, useState } from 'react';
-import NextClicked from './NextClicked';
+import { React, useState } from 'react';
 
 const SignupForm = () => {
 
     const [name, setName] = useState('');
     const [phone, setPhone] = useState(''); // string
-    const [isClicked, setIsClicked] = useState(false); // false
+    const [month, setMonth] = useState('');
+    const [day, setDay] = useState('');
+    const [year, setYear] = useState('');
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(name);
+        console.log(phone);
+        console.log(month);
+        console.log(day);
+        console.log(year);
+    }
 
     return (
-        <form action="./NextClicked.jsx" method="get">
+        <>
+        <form onSubmit={handleSubmit}>
             <div id='signup-page'>
                 <div>
                     <title>Sign up</title>
@@ -16,10 +27,10 @@ const SignupForm = () => {
                         <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                             <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
 
-                            <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '30px', marginTop: '10px' }} onChange={(event) => setName(event.target.value)} />
+                            <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px' }} onChange={(event) => setName(event.target.value)} />
                             <br />
                             <br />
-                            <input type="text" name="phone" placeholder='Phone' id="phone" style={{ height: '40px', width: '340px', fontSize: '30px' }} onChange={(event) => setPhone(event.target.value)} />
+                            <input type="text" name="phone" placeholder='Phone' id="phone" style={{ height: '40px', width: '340px', fontSize: '20px' }} onChange={(event) => setPhone(event.target.value)} />
                             <br />
                             <br />
                             <div style={{ marginTop: "40px" }}>
@@ -31,7 +42,7 @@ const SignupForm = () => {
                                     <div className="month" style={{ paddingRight: '10px' }}>
                                         <label style={{ fontSize: '15px', color: 'black' }}>Month</label>
                                         <br />
-                                        <select id='month-select' style={{ width: '120px', height: '50px', fontSize: '20px' }}>
+                                        <select id='month-select' style={{ width: '120px', height: '50px', fontSize: '20px' }} onChange={(event) => setMonth(event.target.value)}>
                                             <option value=''></option>
                                             <option value='January'>January</option>
                                             <option value='February'>February</option>
@@ -51,7 +62,7 @@ const SignupForm = () => {
                                     <div className="day" style={{ paddingRight: '10px' }}>
                                         <label style={{ fontSize: '15px', color: 'black' }}>Day</label>
                                         <br />
-                                        <select id='day-select' style={{ width: '75px', height: '50px', fontSize: '20px' }}>
+                                        <select id='day-select' style={{ width: '75px', height: '50px', fontSize: '20px' }} onChange={(event) => setDay(event.target.value)}>
                                             <option value=''></option>
                                             <option value='one'>1</option>
                                             <option value='two'>2</option>
@@ -90,7 +101,7 @@ const SignupForm = () => {
                                     <div className="year" style={{ paddingRight: '10px' }}>
                                         <label style={{ fontSize: '15px', color: 'black' }}>Year</label>
                                         <br />
-                                        <select style={{ width: '75px', height: '50px', fontSize: '20px' }} >
+                                        <select style={{ width: '75px', height: '50px', fontSize: '20px' }} onChange={(event) => setYear(event.target.value)}>
                                             <option value=''></option>
                                             {(() => {
                                                 const date = new Date();
@@ -108,12 +119,9 @@ const SignupForm = () => {
 
                                 </div>
                                 <br />
-                                {/* {
-                                isClicked ? <NextClicked /> : <></>
-                            } */}
                                 <div style={{ marginTop: '10px' }}>
 
-                                    <button type='submit' id='next1' style={{ height: '40px', width: '150px', fontSize: '30px', marginTop: '50px', borderRadius: '3%' }} onClick={() => setIsClicked(true)}>Next</button>
+                                    <button type='submit' id='next1' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%' }}>Next</button>
 
                                 </div>
                             </div>
@@ -122,6 +130,7 @@ const SignupForm = () => {
                 </div>
             </div>
         </form>
+        </>
     )
 }
 
