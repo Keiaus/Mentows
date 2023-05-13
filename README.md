@@ -5,6 +5,7 @@ Installation
 ---
 ```
 git clone https://github.com/Keiaus/Mentows.git
+cd Mentows
 cd mentows
 npm install
 npm install react-router-dom
