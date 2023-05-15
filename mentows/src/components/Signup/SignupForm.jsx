@@ -13,22 +13,18 @@ const SignupForm = () => {
 
     const handleNextClicked = (event) => {
         event.preventDefault();
-        console.log(name);
-        console.log(phone);
-        console.log(month);
-        console.log(day);
-        console.log(year);
-
         setNextClicked(true);
     }
 
     const handleYesClicked = (event) => {
-        
+        event.preventDefault();
+        setYesClicked(true);
     }
 
     const handleNoClicked = (event) => {
-        
-    }    
+        event.preventDefault();
+        setNoClicked(true);
+    }
 
     function formatPhoneNumber(phoneNumber) {
         // Remove all non-digit characters
@@ -41,51 +37,54 @@ const SignupForm = () => {
     }
 
     if (nextClicked) {
-        
+
         return (
             <>
-                <form>
-                    <div id='confirmation'>
-                        <div>
-                            <title>Sign up</title>
-                            <div id='confirmation-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
-                                <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
-                                    <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
-                                    <h3 style={{color:'coral', fontSize:'25px', marginTop:'70px', marginBottom: '80px'}}>Is the information entered correct?</h3>
-                                    {
-                                        <p style={{color:'black', fontSize:'20px'}}>
-                                            <span style={{fontWeight: 'bold'}}>Name:</span> {document.getElementById("name").value}
-                                            <br/>
-                                            <span style={{fontWeight: 'bold'}}>Phone:</span> {formatPhoneNumber(document.getElementById("phone").value)}
-                                        </p>
-                                    }
+                <div id='confirmation'>
+                    <div>
+                        <title>Sign up</title>
+                        <div id='confirmation-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                            <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                                <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
+                                <h3 style={{ color: 'coral', fontSize: '25px', marginTop: '40px', marginBottom: '60px' }}>Is the information entered correct?</h3>
+                                {
+                                    <p style={{ color: 'black', fontSize: '20px', display: 'block', textAlign: 'left', marginLeft: '150px' }}>
+                                        <span style={{ fontWeight: 'bold' }}>Name:</span> {document.getElementById("name").value}
+                                        <br />
+                                        <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(document.getElementById("phone").value)}
+                                    </p>
+                                }
 
-                                    <br />
-                                    <div style={{ marginTop: '10px' }}>
-
+                                <br />
+                                <div style={{ marginTop: '70px' }}>
+                                    <form onSubmit={handleYesClicked}>
                                         <button type='submit' id='yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '60px', borderRadius: '3%' }} >Yes</button>
-                                        <br/>
+                                    </form>
+                                    <br />
+                                    <form onSubmit={handleNoClicked}>
                                         <button type='submit' id='no' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '10px', borderRadius: '3%' }} >No</button>
-
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </>
+        )
+    }
+
+    if (yesClicked) {
+        return (
+            <>
+                <form>
+                    
                 </form>
             </>
         )
     }
 
-    if (yesClicked)
-    {
-        return (
-            <>
-                <form>
+    if (noClicked) {
 
-                </form>
-            </>
-        )
     }
 
     else {
