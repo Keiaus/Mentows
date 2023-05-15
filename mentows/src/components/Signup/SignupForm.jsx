@@ -21,9 +21,6 @@ const SignupForm = () => {
     }
 
     if (nextClicked) {
-
-        let getName = document.getElementById("name").innerHTML;
-        getName.valueOf();
         
         return (
             <>
@@ -34,9 +31,13 @@ const SignupForm = () => {
                             <div id='confirmation-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                                 <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                     <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
-                                    <p style={{color:'black'}}>Is the information entered correct?</p>
+                                    <h3 style={{color:'coral'}}>Is the information entered correct?</h3>
                                     {
-                                        getName
+                                        <p style={{color:'black', fontSize:'20px'}}>
+                                            Name: {document.getElementById("name").value}
+                                            <br/>
+                                            Phone: {document.getElementById("phone").value}
+                                        </p>
                                     }
 
                                     <br />
