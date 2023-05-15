@@ -12,7 +12,7 @@ const Navbar = () => {
             <Nav>
                 <NavMenu>
                     <NavLink to='https://github.com/Keiaus/Mentows' target={'_blank'}>
-                        <img src={"./src/assets/mentows_logo_mac.png"} alt="" className='mentows_logo' style={{ height: '85px', width: '150px' }} />
+                        <img src={"./src/assets/Mentows3.png"} alt="" className='mentows_logo' style={{ height: '120px', width: '200px' }} />
                     </NavLink>
                     <NavLink to='/Home' >
                         Home

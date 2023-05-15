@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
     background: coral;
-    height: 80px;
+    height: 120px;
     display: flex;
     justify-content: space-between;
-    padding: 0.2rem calc((100vw - 1000px) / 2);
+    ${'' /* padding: 0.2rem calc((100vw - 1000px) / 2); */}
     z-index: 12;
 `;
 
