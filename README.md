@@ -1,4 +1,7 @@
-<img src="/mentows/src/assets/Mentows3.png" alt="Alt Text" width="300" height="200">
+<p align="center">
+  <img src="/mentows/src/assets/Mentows3.png" alt="Alt Text" style="max-width:300px; width:100%;">
+</p>
+
 
 # Mentows
 Mentows is an internet hosting service for Astronomers. It's collaborative environment allows scientists to analyze hubble data, document new discoveries, and much more. Think GitHub but for Astronomers.
