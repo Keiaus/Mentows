@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/mentows/src/assets/Mentows3.png" alt="Alt Text" style="height:200px; width:200px">
+  <img src="/mentows/src/assets/Mentows3.png" alt="Alt Text" style="height:200px; width:300px">
 </p>
 
 
