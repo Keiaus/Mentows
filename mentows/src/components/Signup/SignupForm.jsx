@@ -6,7 +6,7 @@ const SignupForm = () => {
     const [noClicked, setNoClicked] = useState(false);
     const [nextClicked, setNextClicked] = useState(false);
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState(''); // string
+    const [phone, setPhone] = useState('');
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
@@ -76,7 +76,7 @@ const SignupForm = () => {
     if (yesClicked) {
         return (
             <>
-                <form>
+                <form onSubmit={handleYesClicked}>
                     
                 </form>
             </>
@@ -84,7 +84,13 @@ const SignupForm = () => {
     }
 
     if (noClicked) {
+        return (
+            <>
+                <form onSubmit={handleNoClicked}>
 
+                </form>
+            </>
+        )
     }
 
     else {
