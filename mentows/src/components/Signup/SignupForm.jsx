@@ -46,21 +46,27 @@ const SignupForm = () => {
                         <div id='confirmation-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                             <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                 <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
-                                <h3 style={{ color: 'coral', fontSize: '25px', marginTop: '40px', marginBottom: '60px' }}>Is the information entered correct?</h3>
+                                <h3 style={{ color: 'coral', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</h3>
                                 {
-                                    <p style={{ color: 'black', fontSize: '20px', display: 'block', textAlign: 'left', marginLeft: '150px' }}>
-                                        <span style={{ fontWeight: 'bold' }}>Name:</span> {document.getElementById("name").value}
+                                    <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '130px' }}>
+                                        <span style={{ fontWeight: 'bold' }}>Name</span> {document.getElementById("name").value}
                                         <br />
-                                        <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(document.getElementById("phone").value)}
+                                        <span style={{ fontWeight: 'bold' }}>Phone</span> {formatPhoneNumber(document.getElementById("phone").value)}
+                                        <br />
+                                        <div style={{marginRight:'20px', marginTop:'20px'}}>
+                                            <span style={{ fontWeight: 'bold' }}>Date of Birth</span> 
+                                            <br />
+                                            <div>
+                                                {document.getElementById("month-select").value} {document.getElementById("day-select").value} {document.getElementById("year-select").value}
+                                            </div>
+                                        </div>
                                     </p>
                                 }
 
-                                <br />
-                                <div style={{ marginTop: '70px' }}>
+                                <div>
                                     <form onSubmit={handleYesClicked}>
                                         <button type='submit' id='yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '60px', borderRadius: '3%' }} >Yes</button>
                                     </form>
-                                    <br />
                                     <form onSubmit={handleNoClicked}>
                                         <button type='submit' id='no' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '10px', borderRadius: '3%' }} >No</button>
                                     </form>
@@ -178,7 +184,7 @@ const SignupForm = () => {
                                             <div className="year" style={{ paddingRight: '10px' }}>
                                                 <label style={{ fontSize: '15px', color: 'black' }}>Year</label>
                                                 <br />
-                                                <select style={{ width: '75px', height: '50px', fontSize: '20px' }} onChange={(event) => setYear(event.target.value)}>
+                                                <select id='year-select' style={{ width: '75px', height: '50px', fontSize: '20px' }} onChange={(event) => setYear(event.target.value)}>
                                                     <option value=''></option>
                                                     {(() => {
                                                         const date = new Date();
@@ -186,7 +192,7 @@ const SignupForm = () => {
                                                         const options = [];
 
                                                         for (let year = currentYear; year >= 1900; year--) {
-                                                            options.push(<option id='year-select' key={year} value={year}>{year}</option>);
+                                                            options.push(<option key={year} value={year}>{year}</option>);
                                                         }
 
                                                         return options;
