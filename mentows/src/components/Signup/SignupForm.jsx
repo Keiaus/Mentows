@@ -36,16 +36,6 @@ const SignupForm = () => {
         return phoneNumber;
     }
 
-    function formatMonth(month) {
-        // Remove all non-digit characters
-        phoneNumber = phoneNumber.replace(/\D/g, '');
-
-        // Add dashes between groups of digits
-        phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-
-        return phoneNumber;
-    }
-
     if (nextClicked) {
 
         const monthSelect = document.getElementById("month-select").value;
@@ -64,9 +54,9 @@ const SignupForm = () => {
                                 <h3 style={{ color: 'coral', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</h3>
                                 {
                                     <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '130px' }}>
-                                        <span style={{ fontWeight: 'bold' }}>Name</span> {document.getElementById("name").value}
+                                        <span style={{ fontWeight: 'bold' }}>Name:</span> {document.getElementById("name").value}
                                         <br />
-                                        <span style={{ fontWeight: 'bold' }}>Phone</span> {formatPhoneNumber(document.getElementById("phone").value)}
+                                        <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(document.getElementById("phone").value)}
                                         <br />
                                         <div style={{marginRight:'20px', marginTop:'20px'}}>
                                             <span style={{ fontWeight: 'bold' }}>Date of Birth</span> 
@@ -156,6 +146,7 @@ const SignupForm = () => {
                                                     <option value='November'>November</option>
                                                     <option value='December'>December</option>
                                                 </select>
+                                                
                                             </div>
 
                                             <div className="day" style={{ paddingRight: '10px' }}>
