@@ -36,7 +36,22 @@ const SignupForm = () => {
         return phoneNumber;
     }
 
+    function formatMonth(month) {
+        // Remove all non-digit characters
+        phoneNumber = phoneNumber.replace(/\D/g, '');
+
+        // Add dashes between groups of digits
+        phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+
+        return phoneNumber;
+    }
+
     if (nextClicked) {
+
+        const monthSelect = document.getElementById("month-select").value;
+        const daySelect = document.getElementById("day-select").value;
+        const yearSelect = document.getElementById("year-select").value;
+        const formattedString = `${monthSelect} ${daySelect}, ${yearSelect}`;
 
         return (
             <>
@@ -57,7 +72,8 @@ const SignupForm = () => {
                                             <span style={{ fontWeight: 'bold' }}>Date of Birth</span> 
                                             <br />
                                             <div>
-                                                {document.getElementById("month-select").value} {document.getElementById("day-select").value} {document.getElementById("year-select").value}
+                                                {/* {document.getElementById("month-select").value} {document.getElementById("day-select").value} {document.getElementById("year-select").value} */}
+                                                {formattedString}
                                             </div>
                                         </div>
                                     </p>
@@ -147,37 +163,37 @@ const SignupForm = () => {
                                                 <br />
                                                 <select id='day-select' style={{ width: '75px', height: '50px', fontSize: '20px' }} onChange={(event) => setDay(event.target.value)}>
                                                     <option value=''></option>
-                                                    <option value='one'>1</option>
-                                                    <option value='two'>2</option>
-                                                    <option value='three'>3</option>
-                                                    <option value='four'>4</option>
-                                                    <option value='five'>5</option>
-                                                    <option value='six'>6</option>
-                                                    <option value='seven'>7</option>
-                                                    <option value='eight'>8</option>
-                                                    <option value='nine'>9</option>
-                                                    <option value='ten'>10</option>
-                                                    <option value='eleven'>11</option>
-                                                    <option value='twelve'>12</option>
-                                                    <option value='thirteen'>13</option>
-                                                    <option value='fourteen'>14</option>
-                                                    <option value='fifteen'>15</option>
-                                                    <option value='sixteen'>16</option>
-                                                    <option value='seventeen'>17</option>
-                                                    <option value='eighteen'>18</option>
-                                                    <option value='nineteen'>19</option>
-                                                    <option value='twenty'>20</option>
-                                                    <option value='twentyone'>21</option>
-                                                    <option value='twentytwo'>22</option>
-                                                    <option value='twentythree'>23</option>
-                                                    <option value='twentyfour'>24</option>
-                                                    <option value='twentyfive'>25</option>
-                                                    <option value='twentysix'>26</option>
-                                                    <option value='twentyseven'>27</option>
-                                                    <option value='twentyeight'>28</option>
-                                                    <option value='twentynine'>29</option>
-                                                    <option value='thirty'>30</option>
-                                                    <option value='thirtyone'>31</option>
+                                                    <option value='1'>1</option>
+                                                    <option value='2'>2</option>
+                                                    <option value='3'>3</option>
+                                                    <option value='4'>4</option>
+                                                    <option value='5'>5</option>
+                                                    <option value='6'>6</option>
+                                                    <option value='7'>7</option>
+                                                    <option value='8'>8</option>
+                                                    <option value='9'>9</option>
+                                                    <option value='10'>10</option>
+                                                    <option value='11'>11</option>
+                                                    <option value='12'>12</option>
+                                                    <option value='13'>13</option>
+                                                    <option value='14'>14</option>
+                                                    <option value='15'>15</option>
+                                                    <option value='16'>16</option>
+                                                    <option value='17'>17</option>
+                                                    <option value='18'>18</option>
+                                                    <option value='19'>19</option>
+                                                    <option value='20'>20</option>
+                                                    <option value='21'>21</option>
+                                                    <option value='22'>22</option>
+                                                    <option value='23'>23</option>
+                                                    <option value='24'>24</option>
+                                                    <option value='25'>25</option>
+                                                    <option value='26'>26</option>
+                                                    <option value='27'>27</option>
+                                                    <option value='28'>28</option>
+                                                    <option value='29'>29</option>
+                                                    <option value='30'>30</option>
+                                                    <option value='31'>31</option>
                                                 </select>
                                             </div>
 
