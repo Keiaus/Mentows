@@ -15,28 +15,28 @@ const Navbar = () => {
                         <img src={"./src/assets/Mentows3.png"} alt="" className='mentows_logo' style={{ height: '120px', width: '200px' }} />
                     </NavLink>
                     <NavLink to='/Home' >
-                        Home
+                        <p style={{ fontSize: '20px' }}>Home</p>
                     </NavLink>
                     <NavLink to='/About' >
-                        About
+                        <p style={{ fontSize: '20px' }}>About</p>
                     </NavLink>
                     <NavLink to='/Downloads' >
-                        Downloads
+                        <p style={{ fontSize: '20px' }}>Downloads</p>
                     </NavLink>
                     <NavLink to='/Topics'>
-                        Topics
+                        <p style={{ fontSize: '20px' }}>Topics</p>
                     </NavLink>
                     <NavLink to='/Documentation' >
-                        Docs
+                        <p style={{ fontSize: '20px' }}>Documentation</p>
                     </NavLink>
                     <div style={{ position: 'absolute', right: '0', marginRight: '10px' }}>
                         <NavLink to='/Login' >
-                            Log in
+                            <p style={{ fontSize: '20px' }}>Log in</p>
                         </NavLink>
                     </div>
                     <div style={{ position: 'absolute', right: '0', marginRight: '100px' }}>
                         <NavLink to='/Signup' >
-                            Sign up
+                            <p style={{ fontSize: '20px' }}>Sign up</p>
                         </NavLink>
                     </div>
                 </NavMenu>
