@@ -45,21 +45,21 @@ const SignupForm = () => {
 
         return (
             <>
-                <div id='confirmation'>
+                <div id='next-clicked'>
                     <div>
                         <title>Sign up</title>
-                        <div id='confirmation-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                        <div id='next-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                             <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                 <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
                                 <h3 style={{ color: 'coral', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</h3>
                                 {
                                     <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '130px' }}>
-                                        <span style={{ fontWeight: 'bold' }}>Name:</span> {document.getElementById("name").value}
+                                        <span style={{ fontWeight: 'bold' }}>Name:</span> {name}
                                         <br />
                                         <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(document.getElementById("phone").value)}
                                         <br />
-                                        <div style={{marginRight:'20px', marginTop:'20px'}}>
-                                            <span style={{ fontWeight: 'bold' }}>Date of Birth</span> 
+                                        <div style={{ marginRight: '20px', marginTop: '20px' }}>
+                                            <span style={{ fontWeight: 'bold' }}>Date of Birth</span>
                                             <br />
                                             <div>
                                                 {/* {document.getElementById("month-select").value} {document.getElementById("day-select").value} {document.getElementById("year-select").value} */}
@@ -86,10 +86,32 @@ const SignupForm = () => {
     }
 
     if (yesClicked) {
+
         return (
             <>
                 <form onSubmit={handleYesClicked}>
-                    
+                    <div id='signup-page'>
+                        <div>
+                            <title>Sign up</title>
+                            <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                                <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                                    <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
+
+                                    <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px' }} onChange={(event) => setName(event.target.value)} />
+                                    <br />
+                                    <br />
+                                    <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px' }} onChange={(event) => setPhone(event.target.value)} />
+
+                                    <br />
+                                    <div style={{ marginTop: '10px' }}>
+
+                                        <button type='submit' id='next1' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%' }} >Next</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </>
         )
@@ -146,7 +168,7 @@ const SignupForm = () => {
                                                     <option value='November'>November</option>
                                                     <option value='December'>December</option>
                                                 </select>
-                                                
+
                                             </div>
 
                                             <div className="day" style={{ paddingRight: '10px' }}>
