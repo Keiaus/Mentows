@@ -3,7 +3,7 @@ import React from 'react';
 const Documentation = () => {
     return (
         <div>
-            <title>Documentation</title>
+            <title>Documentation | Mentows</title>
             <p style={{ textAlign: 'center', fontSize: '50px', fontFamily: 'bold' }}>Mentows Documentation</p>
             <div id='howto'>
                 <h1 style={{ textAlign: 'center' }}>How to Use</h1>
