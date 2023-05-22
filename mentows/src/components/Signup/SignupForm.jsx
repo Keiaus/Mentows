@@ -59,7 +59,7 @@ const SignupForm = () => {
                                         <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(document.getElementById("phone").value)}
                                         <br />
                                         <div style={{marginRight:'20px', marginTop:'20px'}}>
-                                            <span style={{ fontWeight: 'bold' }}>Date of Birth</span> 
+                                            <span style={{ fontWeight: 'bold' }}>Date of Birth:</span> 
                                             <br />
                                             <div>
                                                 {/* {document.getElementById("month-select").value} {document.getElementById("day-select").value} {document.getElementById("year-select").value} */}
@@ -106,6 +106,37 @@ const SignupForm = () => {
     }
 
     else {
+        // const selectMonth = document.getElementById('month-select');
+        // const selectDay = document.getElementById('day-select');
+        // const selectYear = document.getElementById('year-select');
+
+        // selectMonth.addEventListener('change', function(event){
+        //     const selectedOption = event.target.value;
+
+        //     if (selectedOption === '')
+        //     {
+        //         alert('Please select a month');
+        //     }
+        // });
+
+        // selectDay.addEventListener('change', function(event){
+        //     const selectedOption = event.target.value;
+
+        //     if (selectedOption === '')
+        //     {
+        //         alert('Please select a day');
+        //     }
+        // });
+
+        // selectYear.addEventListener('change', function(event){
+        //     const selectedOption = event.target.value;
+
+        //     if (selectedOption === '')
+        //     {
+        //         alert('Please select a year');
+        //     }
+        // });
+
         return (
             <>
                 <form onSubmit={handleNextClicked}>
