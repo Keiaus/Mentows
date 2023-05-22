@@ -45,7 +45,7 @@ const Home = () => {
     return (
         <body>
             <div id="home-container">
-                <title>Home</title>
+                <title>Home | Mentows</title>
                 <div style={{ margin: "auto" }}>
                     <p style={{ fontFamily: 'sans-serif bold', fontSize: '20px', textAlign: 'center', paddingTop: "50px", paddingBottom: "10px" }}>
                         {quote}

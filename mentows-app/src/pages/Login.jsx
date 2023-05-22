@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <div>
             <title>
-                Login
+                Login | Mentows
             </title>
             <div id='style-container' style={{ height: '500px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                 <div id='container' style={{ textAlign: 'center', marginTop: '100px' }}>
