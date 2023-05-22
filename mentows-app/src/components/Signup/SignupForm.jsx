@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 
 const SignupForm = () => {
 
@@ -25,7 +25,9 @@ const SignupForm = () => {
 
     const handleNoClicked = (event) => {
         event.preventDefault();
-        setNoClicked(true);
+        return (
+            setNoClicked(true)
+        )
     }
 
     function formatPhoneNumber(phoneNumber) {
@@ -37,6 +39,10 @@ const SignupForm = () => {
 
         return phoneNumber;
     }
+
+    // useEffect(() => {
+    //     setYesClicked(true);
+    // }, []);
 
     if (nextClicked) {
 
@@ -73,9 +79,9 @@ const SignupForm = () => {
 
                                 <div>
 
-                                    <button type='submit' onClick={handleYesClicked} id='yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '60px', borderRadius: '3%', }} >Yes</button>
-                                    <br/>
-                                    <button type='submit' onSubmit={handleNoClicked} id='no' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '10px', borderRadius: '3%' }}>No</button>
+                                    <button type='button' onClick={handleYesClicked} id='yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '60px', borderRadius: '3%', cursor: 'pointer' }} >Yes</button>
+                                    <br />
+                                    <button type='button' onClick={handleNoClicked} id='no' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '10px', borderRadius: '3%', cursor: 'pointer' }}>No</button>
 
                                 </div>
                             </div>
@@ -85,6 +91,19 @@ const SignupForm = () => {
             </>
         )
     }
+
+    // {yesClicked ? (
+    //     useEffect(() => {
+    //         setYesClicked(true);
+    //     })
+    // ) : noClicked ? (
+    //     useEffect(() => {
+    //         setNoClicked(true);
+    //     })
+    // ) : (
+    //     <>
+    //     </>
+    // )}
 
     // else {
     return (
@@ -192,7 +211,7 @@ const SignupForm = () => {
                                     <br />
                                     <div style={{ marginTop: '10px' }}>
 
-                                        <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%' }} >Next</button>
+                                        <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
 
                                     </div>
                                 </div>
@@ -220,7 +239,7 @@ const SignupForm = () => {
                                     <br />
                                     <div style={{ marginTop: '10px' }}>
 
-                                        <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%' }} >Next</button>
+                                        <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
 
                                     </div>
                                 </div>
@@ -335,7 +354,7 @@ const SignupForm = () => {
                                         <br />
                                         <div style={{ marginTop: '10px' }}>
 
-                                            <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%' }} >Next</button>
+                                            <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
 
                                         </div>
                                     </div>
