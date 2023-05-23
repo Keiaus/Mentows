@@ -20,14 +20,33 @@ const SignupForm = () => {
 
     const handleYesClicked = (event) => {
         event.preventDefault();
+        console.log("yes clicked");
         setYesClicked(true);
     }
 
     const handleNoClicked = (event) => {
         event.preventDefault();
-        return (
-            setNoClicked(true)
-        )
+        setNoClicked(true);
+    }
+
+    const handleMonthSelect = (event) => {
+        setMonth(event.target.value);
+    }
+
+    const handleDaySelect = (event) => {
+        setDay(event.target.value);
+    }
+
+    const handleYearSelect = (event) => {
+        setYear(event.target.value);
+    }
+
+    const handleNameEntry = (event) => {
+        setName(event.target.value);
+    }
+
+    const handlePhoneEntry = (event) => {
+        setPhone(event.target.value);
     }
 
     function formatPhoneNumber(phoneNumber) {
@@ -42,13 +61,13 @@ const SignupForm = () => {
 
     // useEffect(() => {
     //     setYesClicked(true);
-    // }, []);
+    // }, [])
 
     if (nextClicked) {
 
-        const monthSelect = document.getElementById("month-select").value;
-        const daySelect = document.getElementById("day-select").value;
-        const yearSelect = document.getElementById("year-select").value;
+        const monthSelect = month;
+        const daySelect = day;
+        const yearSelect = year;
         const formattedString = `${monthSelect} ${daySelect}, ${yearSelect}`;
 
         return (
@@ -64,7 +83,7 @@ const SignupForm = () => {
                                     <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '130px' }}>
                                         <span style={{ fontWeight: 'bold' }}>Name:</span> {name}
                                         <br />
-                                        <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(document.getElementById("phone").value)}
+                                        <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(phone)}
                                         <br />
                                         <div style={{ marginRight: '20px', marginTop: '20px' }}>
                                             <span style={{ fontWeight: 'bold' }}>Date of Birth</span>
@@ -116,10 +135,10 @@ const SignupForm = () => {
                             <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                 <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
 
-                                <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px' }} onChange={(event) => setName(event.target.value)} />
+                                <input type="text" name="name" placeholder='Name' id="name" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px' }} value={name} onChange={handleNameEntry} />
                                 <br />
                                 <br />
-                                <input type="text" name="phone" placeholder='Phone' id="phone" style={{ height: '40px', width: '340px', fontSize: '20px' }} onChange={(event) => setPhone(event.target.value)} />
+                                <input type="text" name="phone" placeholder='Phone' id="phone" style={{ height: '40px', width: '340px', fontSize: '20px' }} value={phone} onChange={handlePhoneEntry} />
                                 <br />
                                 <br />
                                 <div style={{ marginTop: "40px" }}>
@@ -131,7 +150,7 @@ const SignupForm = () => {
                                         <div className="month" style={{ paddingRight: '10px' }}>
                                             <label style={{ fontSize: '15px', color: 'black' }}>Month</label>
                                             <br />
-                                            <select id='month-select' style={{ width: '120px', height: '50px', fontSize: '20px' }} onChange={(event) => setMonth(event.target.value)}>
+                                            <select id='month-select' style={{ width: '120px', height: '50px', fontSize: '20px' }} value={month} onChange={handleMonthSelect}>
                                                 <option value=''></option>
                                                 <option value='January'>January</option>
                                                 <option value='February'>February</option>
@@ -152,7 +171,7 @@ const SignupForm = () => {
                                         <div className="day" style={{ paddingRight: '10px' }}>
                                             <label style={{ fontSize: '15px', color: 'black' }}>Day</label>
                                             <br />
-                                            <select id='day-select' style={{ width: '75px', height: '50px', fontSize: '20px' }} onChange={(event) => setDay(event.target.value)}>
+                                            <select id='day-select' style={{ width: '75px', height: '50px', fontSize: '20px' }} value={day} onChange={handleDaySelect}>
                                                 <option value=''></option>
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
@@ -191,7 +210,7 @@ const SignupForm = () => {
                                         <div className="year" style={{ paddingRight: '10px' }}>
                                             <label style={{ fontSize: '15px', color: 'black' }}>Year</label>
                                             <br />
-                                            <select id='year-select' style={{ width: '75px', height: '50px', fontSize: '20px' }} onChange={(event) => setYear(event.target.value)}>
+                                            <select id='year-select' style={{ width: '75px', height: '50px', fontSize: '20px' }} value={year} onChange={handleYearSelect}>
                                                 <option value=''></option>
                                                 {(() => {
                                                     const date = new Date();
