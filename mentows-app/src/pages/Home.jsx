@@ -57,7 +57,7 @@ const Home = () => {
                         <form action="" method="get">
                             <input type="text" style={{ height: '50px', width: '500px', fontSize: '20px', border: "none", paddingLeft: "10px", borderRadius: "10px" }} />
                             <br />
-                            <button type="submit" style={{ fontSize: "20px", marginTop: "20px" }}>Search</button>
+                            <button type="submit" style={{ fontSize: "20px", marginTop: "20px", cursor: "pointer"  }}>Search</button>
                         </form>
                     </div>
 
