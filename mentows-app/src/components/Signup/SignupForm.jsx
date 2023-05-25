@@ -1,6 +1,6 @@
-import { React, useState } from 'react';
+import { React, useRef, useState } from 'react';
 
-const SignupForm = (props) => {
+const SignupForm = () => {
 
     const [yesClicked, setYesClicked] = useState(false);
     const [noClicked, setNoClicked] = useState(false);
@@ -16,10 +16,6 @@ const SignupForm = (props) => {
     const handleNextClicked = (event) => {
         event.preventDefault();
         setNextClicked(true);
-        // if (!nextClicked) {
-        //     setNextClicked(true);
-        // }
-        
     }
 
     const handleYesClicked = (event) => {
@@ -33,11 +29,10 @@ const SignupForm = (props) => {
 
     const handleNoClicked = (event) => {
         event.preventDefault();
-
-        if (!noClicked) {
-            setNoClicked(true);
-            setNextClicked(true);
-        }
+        setTimeout(() => {
+            setNextClicked(false);
+        }, 1);
+        
     }
 
     const handleMonthSelect = (event) => {
@@ -80,30 +75,30 @@ const SignupForm = (props) => {
         if (yesClicked) {
             return (
                 <>
-                    {/* <form onSubmit={handleYesClicked}> */}
-                    <div id='signup-page'>
-                        <div>
-                            <title>Sign up</title>
-                            <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
-                                <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
-                                    <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
+                    <form onSubmit={handleYesClicked}>
+                        <div id='signup-page'>
+                            <div>
+                                <title>Sign up</title>
+                                <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                                    <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                                        <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
 
-                                    <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} onChange={(event) => setEmail(event.target.value)} />
-                                    <br />
-                                    <br />
-                                    <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} onChange={(event) => setUsername(event.target.value)} />
+                                        <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} onChange={(event) => setEmail(event.target.value)} />
+                                        <br />
+                                        <br />
+                                        <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} onChange={(event) => setUsername(event.target.value)} />
 
-                                    <br />
-                                    <div style={{ marginTop: '10px' }}>
+                                        <br />
+                                        <div style={{ marginTop: '10px' }}>
 
-                                        <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
+                                            <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    {/* </form> */}
+                    </form>
                 </>
             )
         }
@@ -214,7 +209,7 @@ const SignupForm = (props) => {
                                             <br />
                                             <div style={{ marginTop: '10px' }}>
 
-                                                <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer'}} >Next</button>
+                                                <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer'}}>Next</button>
 
                                             </div>
                                         </div>
