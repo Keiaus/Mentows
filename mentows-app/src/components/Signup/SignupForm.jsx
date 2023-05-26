@@ -1,10 +1,15 @@
-import { React, useRef, useState } from 'react';
+import { React, useState } from 'react';
 
+// This is the main component that runs all the HTML elements
 const SignupForm = () => {
 
+    // Created hooks for each variable
     const [yesClicked, setYesClicked] = useState(false);
-    const [noClicked, setNoClicked] = useState(false);
+    const [noClicked] = useState(false);
     const [nextClicked, setNextClicked] = useState(false);
+    const [nextInYesClicked, setNextInYesClicked] = useState(false);
+    const [yesInYesClicked, setYesInYesClicked] = useState(false);
+    const [noInYesClicked] = useState(false);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -13,11 +18,13 @@ const SignupForm = () => {
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
 
+    // Sets the nextClicked state variable to true after next is clicked
     const handleNextClicked = (event) => {
         event.preventDefault();
         setNextClicked(true);
     }
 
+    // Sets the yesClicked state variable to true after yes is clicked
     const handleYesClicked = (event) => {
         event.preventDefault();
 
@@ -27,34 +34,76 @@ const SignupForm = () => {
 
     }
 
+    // Sets the nextClicked state variable to false after one second allowing a back option
     const handleNoClicked = (event) => {
         event.preventDefault();
         setTimeout(() => {
             setNextClicked(false);
         }, 1);
-        
+
     }
 
+    // Sets the nextInYesClicked state variable to true
+    const handleNextInYesClicked = (event) => {
+        event.preventDefault();
+        setNextInYesClicked(true);
+    }
+
+    // Sets the yesInYesClicked state variable to true
+    const handleYesInYesClicked = (event) => {
+        event.preventDefault();
+
+        if (!yesInYesClicked) {
+            setYesInYesClicked(true);
+        }
+
+    }
+
+    // Sets the nextInYesClicked state variable to false after one second allowing a back option
+    const handleNoInYesClicked = (event) => {
+        event.preventDefault();
+        setTimeout(() => {
+            setNextInYesClicked(false);
+        }, 1);
+
+    }
+
+    // Sets the month state varibale to the value given by the user
     const handleMonthSelect = (event) => {
         setMonth(event.target.value);
     }
 
+    // Sets the day state varibale to the value given by the user
     const handleDaySelect = (event) => {
         setDay(event.target.value);
     }
 
+    // Sets the year state varibale to the value given by the user
     const handleYearSelect = (event) => {
         setYear(event.target.value);
     }
 
+    // Sets the name state varibale to the value given by the user
     const handleNameEntry = (event) => {
         setName(event.target.value);
     }
 
+    // Sets the phone state varibale to the value given by the user
     const handlePhoneEntry = (event) => {
         setPhone(event.target.value);
     }
 
+    // Sets the email state varibale to the value given by the user
+    const handleEmailEntry = (event) => {
+        setEmail(event.target.value);
+    }
+
+    // Sets the username state varibale to the value given by the user
+    const handleUsernameEntry = (event) => {
+        setUsername(event.target.value);
+    }
+
+    // Formats the phone number to be readable when displayed
     function formatPhoneNumber(phoneNumber) {
         // Remove all non-digit characters
         phoneNumber = phoneNumber.replace(/\D/g, '');
@@ -65,17 +114,26 @@ const SignupForm = () => {
         return phoneNumber;
     }
 
+    // Returns sign up page after next is clicked
     if (nextClicked) {
 
+        // Assigns variables to given data from the user
         const monthSelect = month;
         const daySelect = day;
         const yearSelect = year;
         const formattedString = `${monthSelect} ${daySelect}, ${yearSelect}`;
 
+        // Returns sign up page after yes is clicked
         if (yesClicked) {
-            return (
-                <>
-                    <form onSubmit={handleYesClicked}>
+            
+            // Returns sign up page after the next button in yes is clicked
+            if (nextInYesClicked) {
+
+                // Returns sign up page after the no button in yes is clicked
+                if (noInYesClicked)
+                {
+                    return (
+                        <form onSubmit={handleYesInYesClicked}>
                         <div id='signup-page'>
                             <div>
                                 <title>Sign up</title>
@@ -83,15 +141,75 @@ const SignupForm = () => {
                                     <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                         <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
 
-                                        <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} onChange={(event) => setEmail(event.target.value)} />
+                                        <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} value={email} onChange={handleEmailEntry} />
                                         <br />
                                         <br />
-                                        <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} onChange={(event) => setUsername(event.target.value)} />
+                                        <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={username} onChange={handleUsernameEntry} />
 
                                         <br />
                                         <div style={{ marginTop: '10px' }}>
 
-                                            <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
+                                            <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    )
+                }
+
+                return (
+                    <>
+                        <div id='next-clicked'>
+                            <div>
+                                <title>Sign up | Mentows</title>
+                                <div id='next-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                                    <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                                        <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
+                                        <p style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</p>
+                                        {
+                                            <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '130px' }}>
+                                                <span style={{ fontWeight: 'bold' }}>Email:</span> {email}
+                                                <br />
+                                                <span style={{ fontWeight: 'bold' }}>Username:</span> {username}
+                                            </p>
+                                        }
+
+                                        <div>
+
+                                            <button type='button' id='yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '60px', borderRadius: '3%', cursor: 'pointer' }} onClick={handleYesInYesClicked}>Yes</button>
+                                            <br />
+                                            <button type='button' id='no' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '10px', borderRadius: '3%', cursor: 'pointer' }} onClick={handleNoInYesClicked}>No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )
+            }
+
+            return (
+                <>
+                    <form onSubmit={handleYesInYesClicked}>
+                        <div id='signup-page'>
+                            <div>
+                                <title>Sign up</title>
+                                <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                                    <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                                        <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
+
+                                        <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} value={email} onChange={handleEmailEntry} />
+                                        <br />
+                                        <br />
+                                        <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={username} onChange={handleUsernameEntry} />
+
+                                        <br />
+                                        <div style={{ marginTop: '10px' }}>
+
+                                            <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
 
                                         </div>
                                     </div>
@@ -103,10 +221,11 @@ const SignupForm = () => {
             )
         }
 
+        // Returns sign up page after no is clicked
         if (noClicked) {
             return (
                 <>
-                    <form onSubmit={handleNextClicked}>
+                    <form onSubmit={handleNoClicked}>
                         <div id='signup-page'>
                             <div>
                                 <title>Sign up | Mentows</title>
@@ -209,7 +328,7 @@ const SignupForm = () => {
                                             <br />
                                             <div style={{ marginTop: '10px' }}>
 
-                                                <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer'}}>Next</button>
+                                                <button type='submit' id='next' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }}>Next</button>
 
                                             </div>
                                         </div>
