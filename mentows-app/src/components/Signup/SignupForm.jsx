@@ -125,38 +125,37 @@ const SignupForm = () => {
 
         // Returns sign up page after yes is clicked
         if (yesClicked) {
-            
+
             // Returns sign up page after the next button in yes is clicked
             if (nextInYesClicked) {
 
                 // Returns sign up page after the no button in yes is clicked
-                if (noInYesClicked)
-                {
+                if (noInYesClicked) {
                     return (
-                        <form onSubmit={handleYesInYesClicked}>
-                        <div id='signup-page'>
-                            <div>
-                                <title>Sign up</title>
-                                <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
-                                    <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
-                                        <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
+                        <form onSubmit={handleNoInYesClicked}>
+                            <div id='signup-page'>
+                                <div>
+                                    <title>Sign up</title>
+                                    <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                                        <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                                            <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
 
-                                        <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} value={email} onChange={handleEmailEntry} />
-                                        <br />
-                                        <br />
-                                        <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={username} onChange={handleUsernameEntry} />
+                                            <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} value={email} onChange={handleEmailEntry} />
+                                            <br />
+                                            <br />
+                                            <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={username} onChange={handleUsernameEntry} />
 
-                                        <br />
-                                        <div style={{ marginTop: '10px' }}>
+                                            <br />
+                                            <div style={{ marginTop: '10px' }}>
 
-                                            <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
+                                                <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
                     )
                 }
 
@@ -193,7 +192,7 @@ const SignupForm = () => {
 
             return (
                 <>
-                    <form onSubmit={handleYesInYesClicked}>
+                    <form onSubmit={handleNextInYesClicked}>
                         <div id='signup-page'>
                             <div>
                                 <title>Sign up</title>
