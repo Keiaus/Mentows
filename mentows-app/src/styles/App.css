@@ -3,3 +3,12 @@
         float: none;
     }
 }
+
+/* @media screen and (max-width:400px) {
+    #email-span {
+        float: none;
+    }
+    #username-span {
+        float: none;
+    }
+} */

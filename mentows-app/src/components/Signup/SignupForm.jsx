@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+// import Login from "./Login.jsx";
 
 // This is the main component that runs all the HTML elements
 const SignupForm = () => {
@@ -14,6 +15,8 @@ const SignupForm = () => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
+    const [pass, setPass] = useState('');
+    const [pass2, setPass2] = useState('');
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
@@ -31,7 +34,6 @@ const SignupForm = () => {
         if (!yesClicked) {
             setYesClicked(true);
         }
-
     }
 
     // Sets the nextClicked state variable to false after one second allowing a back option
@@ -40,13 +42,50 @@ const SignupForm = () => {
         setTimeout(() => {
             setNextClicked(false);
         }, 1);
-
     }
 
     // Sets the nextInYesClicked state variable to true
     const handleNextInYesClicked = (event) => {
         event.preventDefault();
         setNextInYesClicked(true);
+        const minPasswordLength = 10;
+        const minSpecialChars = 1;
+        const specialCharsRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+        // Counts the special characters using regex
+        function countSpecialChars(str) {
+            return (str.match(specialCharsRegex) || []).length;
+        }
+        
+        if (pass !== pass2)
+        {
+            alert("The passwords don't match. Try again");
+            setNextInYesClicked(false);
+        }
+
+        if (pass.length < minPasswordLength || pass2.length < minPasswordLength)
+        {
+            alert("Password must contain 10 or more characters");
+            setNextInYesClicked(false);
+        }
+
+        if (countSpecialChars(pass) < minSpecialChars)
+        {
+            alert("Password must contain atleast one special character");
+            setNextInYesClicked(false);
+        }
+
+        if (!/[A-Z]/.test(pass))
+        {
+            alert("Password must contain atleast one uppercase character");
+            setNextInYesClicked(false);
+        }
+
+        if (!/[0-9]/.test(pass))
+        {
+            alert("Password must contain atleast one numeric value");
+            setNextInYesClicked(false);
+        }
     }
 
     // Sets the yesInYesClicked state variable to true
@@ -103,6 +142,16 @@ const SignupForm = () => {
         setUsername(event.target.value);
     }
 
+    // Sets the pass state varibale to the value given by the user
+    const handlePassEntry = (event) => {
+        setPass(event.target.value);
+    }
+
+    // Sets the pass2 state varibale to the value given by the user
+    const handlePass2Entry = (event) => {
+        setPass2(event.target.value);
+    }
+
     // Formats the phone number to be readable when displayed
     function formatPhoneNumber(phoneNumber) {
         // Remove all non-digit characters
@@ -110,7 +159,7 @@ const SignupForm = () => {
 
         // Add dashes between groups of digits
         phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-
+        
         return phoneNumber;
     }
 
@@ -144,11 +193,51 @@ const SignupForm = () => {
                                             <br />
                                             <br />
                                             <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={username} onChange={handleUsernameEntry} />
-
+                                            <br />
+                                            <br />
+                                            <input type="password" name="password" placeholder='Password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass} onChange={handlePassEntry} />
+                                            <br />
+                                            <br />
+                                            <input type="password" name="password2" placeholder='Confirm password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass2} onChange={handlePass2Entry} />
                                             <br />
                                             <div style={{ marginTop: '10px' }}>
 
                                                 <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} >Next</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    )
+                }
+
+                // Returns sign up page after the yes button in yes is clicked
+                if (yesInYesClicked) {
+                    return (
+                        <form onSubmit={handleYesInYesClicked}>
+                            <div id='signup-page'>
+                                <div>
+                                    <title>Sign up</title>
+                                    <div id='style-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
+                                        <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
+                                            <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
+
+                                            <input type="text" name="email" placeholder='Email' id="email" style={{ height: '40px', width: '340px', fontSize: '20px', marginTop: '10px', cursor: "text" }} value={email} onChange={handleEmailEntry} />
+                                            <br />
+                                            <br />
+                                            <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={username} onChange={handleUsernameEntry} />
+                                            <br />
+                                            <br />
+                                            <input type="password" name="password" placeholder='Password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass} onChange={handlePassEntry} />
+                                            <br />
+                                            <br />
+                                            <input type="password" name="password2" placeholder='Confirm password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass2} onChange={handlePass2Entry} />
+                                            <br />
+                                            <div style={{ marginTop: '10px' }}>
+
+                                                <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} onClick={handlePassMatch}>Next</button>
 
                                             </div>
                                         </div>
@@ -169,10 +258,10 @@ const SignupForm = () => {
                                         <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
                                         <p style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</p>
                                         {
-                                            <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '130px' }}>
-                                                <span style={{ fontWeight: 'bold' }}>Email:</span> {email}
+                                            <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '60px' }}>
+                                                <span style={{ fontWeight: 'bold', wordWrap:'break-word', width: '20px', textOverflow: 'ellipsis', overflow: 'hidden' }}>Email:</span> {email}
                                                 <br />
-                                                <span style={{ fontWeight: 'bold' }}>Username:</span> {username}
+                                                <span style={{ fontWeight: 'bold', wordWrap:'break-word', width: '100px', textOverflow: 'ellipsis', overflow: 'hidden'  }}>Username:</span> {username}
                                             </p>
                                         }
 
@@ -204,7 +293,12 @@ const SignupForm = () => {
                                         <br />
                                         <br />
                                         <input type="text" name="username" placeholder='Enter a username' id="username" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={username} onChange={handleUsernameEntry} />
-
+                                        <br />
+                                        <br />
+                                        <input type="password" name="password" placeholder='Password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass} onChange={handlePassEntry} />
+                                        <br />
+                                        <br />
+                                        <input type="password" name="password2" placeholder='Confirm password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass2} onChange={handlePass2Entry} />
                                         <br />
                                         <div style={{ marginTop: '10px' }}>
 
@@ -351,10 +445,10 @@ const SignupForm = () => {
                                 <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
                                 <p style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</p>
                                 {
-                                    <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '130px' }}>
-                                        <span style={{ fontWeight: 'bold' }}>Name:</span> {name}
+                                    <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '60px'}}>
+                                        <span style={{ fontWeight: 'bold', maxWidth:'50%' }}>Name:</span> {name}
                                         <br />
-                                        <span style={{ fontWeight: 'bold' }}>Phone:</span> {formatPhoneNumber(phone)}
+                                        <span style={{ fontWeight: 'bold', maxWidth:'50%'}}>Phone:</span> {formatPhoneNumber(phone)}
                                         <br />
                                         <div style={{ marginRight: '20px', marginTop: '20px' }}>
                                             <span style={{ fontWeight: 'bold' }}>Date of Birth</span>
