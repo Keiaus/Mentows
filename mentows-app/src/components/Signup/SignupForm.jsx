@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import Connection from '../../server/db';
 // import Login from "./Login.jsx";
 
 // This is the main component that runs all the HTML elements
