@@ -13,10 +13,7 @@ cd mentows-app
 npm install
 npm install react-router-dom
 npm install --save styled-components
+npm install express --save
+npm install dotenv --save
 npm run dev
 ```
-
-Hubble Data Features
---- 
-Topics 
----
