@@ -256,7 +256,7 @@ const SignupForm = () => {
                                 <div id='next-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                                     <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                         <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
-                                        <p style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</p>
+                                        <h4 style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</h4>
                                         {
                                             <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '60px' }}>
                                                 <span style={{ fontWeight: 'bold', wordWrap:'break-word', width: '20px', textOverflow: 'ellipsis', overflow: 'hidden' }}>Email:</span> {email}
@@ -443,7 +443,7 @@ const SignupForm = () => {
                         <div id='next-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                             <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                 <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
-                                <p style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</p>
+                                <h4 style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</h4>
                                 {
                                     <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '60px'}}>
                                         <span style={{ fontWeight: 'bold', maxWidth:'50%' }}>Name:</span> {name}
