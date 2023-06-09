@@ -1,12 +1,15 @@
 CREATE TABLE IF NOT EXISTS public.useraccountinfo
 (
-    userid integer NOT NULL DEFAULT nextval('useraccountinfo_userid_seq'::regclass),
-    userfirstname character varying(200) COLLATE pg_catalog."default",
-    userlastname character varying(200) COLLATE pg_catalog."default",
-    userusername character varying(200) COLLATE pg_catalog."default",
-    useremail character varying(200) COLLATE pg_catalog."default",
-    userphone character varying(200) COLLATE pg_catalog."default",
-    userdob character varying(200) COLLATE pg_catalog."default",
-    userpassword character varying(200) COLLATE pg_catalog."default",
+    userid serial not null,
+    userfirstname varchar(200),
+    userlastname varchar(200),
+    userusername varchar(200),
+    useremail varchar(200),
+    userphone varchar(200),
+    userdob varchar(200),
+    userpassword varchar(200),
     CONSTRAINT useraccountinfo_pkey PRIMARY KEY (userid)
 )
+
+insert into useraccountinfo (userfirstname, userlastname, userusername, useremail, userphone, userdob, userpassword)
+values ('Toby', 'Farquaad', 'tfar12', 'tfar@gmail.com', '9176654456', '01/12/1998', 'jigglyPuff12@@');
