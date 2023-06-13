@@ -1,4 +1,5 @@
-// const Connection = () => {
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const { Client } = require('pg');
 require('dotenv').config(); // Needed to retrieve .env file
 
@@ -13,18 +14,4 @@ const client = new Client({
 
 client.connect();
 
-// Retrieves the table information from the database
-client.query(`select * from useraccountinfo`, (err, res) => {
-    if (!err) {
-        console.log(res.rows);
-    }
-
-    else {
-        console.log(err.message);
-    }
-
-    client.end;
-})
-// }
-
-// export default Connection();
+export default client;

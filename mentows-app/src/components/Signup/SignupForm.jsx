@@ -1,11 +1,12 @@
 import { React, useEffect, useState } from 'react';
-import * as db from '../../db';
+import * as C from '../../server/db'; // C is for client
+import { $ } from "jquery";
 // import Login from "./Login.jsx";
 
 // This is the main component that runs all the HTML elements
 const SignupForm = () => {
 
-    // Created hooks for each variable
+    // Hooks for each variable
     const [yesClicked, setYesClicked] = useState(false);
     const [noClicked] = useState(false);
     const [nextClicked, setNextClicked] = useState(false);
@@ -149,7 +150,7 @@ const SignupForm = () => {
     }
 
     // Formats the phone number to be readable when displayed
-    function formatPhoneNumber(phoneNumber) {
+    const formatPhoneNumber = (phoneNumber) => {
         // Remove all non-digit characters
         phoneNumber = phoneNumber.replace(/\D/g, '');
 
@@ -158,6 +159,37 @@ const SignupForm = () => {
 
         return phoneNumber;
     }
+
+    // Runs the necessary queries
+    useEffect(() => {
+
+        // Gets the first and last name entered by the user
+        const fullName = $('#name').val().split(' ');
+        const firstName = fullName.shift();
+        const lastName = fullName.join(' ');
+
+        // Gets the user's date of birth
+        const birthday = `${month}/${day}/${year}`;
+
+        async function insertData() {
+            try {
+                const insertUserData = `INSERT INTO useraccountinfo (userfirstname, userlastname, userusername, useremail, userphone, userdob, userpassword) 
+                                        VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
+                const values = [firstName, lastName, username, email, phone, birthday, pass2];
+                const result = await C.query(insertUserData, values);
+                console.log(result.rows);
+            } catch (error) {
+                console.error('Error executing query:', error);
+            }
+
+            C.end();
+        }
+
+        insertData();
+
+    }, []);
+
+    console.log(name.split(" "));
 
     // Returns sign up page after next is clicked
     if (nextClicked) {
@@ -252,7 +284,7 @@ const SignupForm = () => {
                                 <div id='next-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                                     <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                         <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
-                                        <p style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</p>
+                                        <h4 style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</h4>
                                         {
                                             <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '60px' }}>
                                                 <span style={{ fontWeight: 'bold', wordWrap: 'break-word', width: '20px', textOverflow: 'ellipsis', overflow: 'hidden' }}>Email:</span> {email}
@@ -439,7 +471,7 @@ const SignupForm = () => {
                         <div id='next-container' style={{ height: '630px', width: '500px', backgroundColor: 'whitesmoke', margin: 'auto', borderRadius: '3%', marginTop: '50px' }}>
                             <div id='container' style={{ textAlign: 'center', marginTop: '50px' }}>
                                 <h1 style={{ textAlign: 'center', paddingTop: '50px', color: 'black' }}>Sign up</h1>
-                                <p style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</p>
+                                <h4 style={{ color: 'black', fontSize: '25px', marginTop: '40px', marginBottom: '30px' }}>Is the information entered correct?</h4>
                                 {
                                     <p style={{ color: 'black', fontSize: '25px', display: 'block', textAlign: 'left', marginLeft: '60px' }}>
                                         <span style={{ fontWeight: 'bold', maxWidth: '50%' }}>Name:</span> {name}
