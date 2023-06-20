@@ -15,5 +15,8 @@ npm install react-router-dom
 npm install --save styled-components
 npm install express --save
 npm install dotenv --save
+npm install jquery
+npm install acorn-jsx
+npm i --save-dev pg-cloudflare
 npm run dev
 ```

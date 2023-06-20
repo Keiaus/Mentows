@@ -1,10 +1,9 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const { Client } = require('pg');
-require('dotenv').config(); // Needed to retrieve .env file
+import dotenv from 'dotenv'; // Needed to retrieve .env file
+import { Pool } from 'pg';
+dotenv.config();
 
-// Client connection to the database
-const client = new Client({
+// Pool connection to the database
+const pool = new Pool({
     user: process.env.PGUSER,
     host: process.env.PGHOST,
     database: process.env.PGDB,
@@ -12,6 +11,7 @@ const client = new Client({
     port: process.env.PGPORT
 });
 
-client.connect();
+pool.connect();
 
-export default client;
+export function query(text, params) { return pool.query(text, params); }
+export function end() { return pool.end(); }
