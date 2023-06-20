@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'; // Needed to retrieve .env file
 import { Pool } from 'pg';
-dotenv.config();
+dotenv.config({path: ".env"});
 
 // Pool connection to the database
 const pool = new Pool({
