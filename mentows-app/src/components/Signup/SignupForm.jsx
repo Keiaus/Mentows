@@ -1,13 +1,12 @@
 import { React, useEffect, useState } from 'react';
 import express from 'express';
-import require from 'require';
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 // import { $ } from "jquery";
 
 // Express API 
-const pool = require("mentows-app/src/server/db.js")
+const pool = require("mentows-app/src/server/db.js");
 const app = express();
 const PORT = 5173;
 
