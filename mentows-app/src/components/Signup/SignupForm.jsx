@@ -1,7 +1,15 @@
 import { React, useEffect, useState } from 'react';
-import * as C from '../../server/db'; // C is for client
-import { $ } from "jquery";
-// import Login from "./Login.jsx";
+import express from 'express';
+import require from 'require';
+import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config({ path: ".env" });
+// import { $ } from "jquery";
+
+// Express API 
+const pool = require("mentows-app/src/server/db.js")
+const app = express();
+const PORT = 5173;
 
 // This is the main component that runs all the HTML elements
 const SignupForm = () => {
@@ -22,6 +30,7 @@ const SignupForm = () => {
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
+    const [data, setData] = useState([]);
 
     // Sets the nextClicked state variable to true after next is clicked
     const handleNextClicked = (event) => {
@@ -160,36 +169,60 @@ const SignupForm = () => {
         return phoneNumber;
     }
 
+    const getUsers = (req, res) => {
+        pool.query(`select * from useraccountinfo`, (error, users) => {
+            if (error)
+            {
+                throw error
+            }
+            res.status(200).json(users.row);
+        })
+    }
+
+    app.get("/", (req, res) => {
+        res.send("Hello world");
+    })
+
+    app.get("/Signup", getUsers);
+
+    app.listen(PORT, () => {
+        console.log(`Server listening on port ${PORT}`);
+    })
+
     // Runs the necessary queries
     useEffect(() => {
-
-        // Gets the first and last name entered by the user
-        const fullName = $('#name').val().split(' ');
-        const firstName = fullName.shift();
-        const lastName = fullName.join(' ');
-
-        // Gets the user's date of birth
-        const birthday = `${month}/${day}/${year}`;
-
-        async function insertData() {
-            try {
-                const insertUserData = `INSERT INTO useraccountinfo (userfirstname, userlastname, userusername, useremail, userphone, userdob, userpassword) 
-                                        VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
-                const values = [firstName, lastName, username, email, phone, birthday, pass2];
-                const result = await C.query(insertUserData, values);
-                console.log(result.rows);
-            } catch (error) {
-                console.error('Error executing query:', error);
-            }
-
-            C.end();
-        }
-
-        insertData();
-
+        axios
+            .get('/Signup')
+            .then(res => res.data)
+            .then(data => setData(data))
     }, []);
 
-    console.log(name.split(" "));
+
+    // // Gets the first and last name entered by the user
+    // const fullName = $('#name').val().split(' ');
+    // const firstName = fullName.shift();
+    // const lastName = fullName.join(' ');
+
+    // // Gets the user's date of birth
+    // const birthday = `${month}/${day}/${year}`;
+
+    // async function insertData() {
+    //     try {
+    //         const insertUserData = `INSERT INTO useraccountinfo (userfirstname, userlastname, userusername, useremail, userphone, userdob, userpassword) 
+    //                                 VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
+    //         const values = [firstName, lastName, username, email, phone, birthday, pass2];
+    //         const result = await C.query(insertUserData, values);
+    //         console.log(result.rows);
+    //     } catch (error) {
+    //         console.error('Error executing query:', error);
+    //     }
+
+    //     C.end();
+    // }
+
+    // insertData();
+
+
 
     // Returns sign up page after next is clicked
     if (nextClicked) {
@@ -615,6 +648,28 @@ const SignupForm = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* <div className='container my-5' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <table className='table table-striped'>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {data.map(item => {
+                                    <tr key={item.name}>
+                                        <td>{item.username}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.phone}</td>
+                                    </tr>
+                                })}
+                            </tbody>
+                        </table>
+                    </div> */}
                 </div>
             </form>
         </>
