@@ -1,5 +1,5 @@
 // This acts as our index.js
-const client = require('../')
+import { Pool } from 'pg';
 
 // Pool connection to the database
 const pool = new Pool({
