@@ -11,9 +11,6 @@ git clone https://github.com/Keiaus/Mentows.git
 cd Mentows
 cd mentows-app
 npm install
-npm install react-router-dom
-npm install --save styled-components
-npm install express --save
-npm install dotenv --save
+npm install react-router-dom, --save styled-components, express --save, dotenv --save
 npm run dev
 ```
