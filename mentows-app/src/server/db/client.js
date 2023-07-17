@@ -1,9 +1,25 @@
-import { Pool } from 'pg';
-import { name } from '../package.json';
-const { DB_URL } = process.env;
+import { envURL } from '../envPathURL.js';
+import { createRequire } from 'node:module';
+import process from 'node:process';
+const require = createRequire(import.meta.url);
+const { Pool } = require("pg");
+require('dotenv').config({ path: envURL });
 
-const connectionString = DB_URL || `postgres://localhost:5432/${name}`;
+export const pool = new Pool({
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDB,
+    port: process.env.PGPORT,
+    password: process.env.PGPASS,
+})
 
-const client = new Pool({ connectionString });
+await pool.connect();
 
-export default client;
+console.log(await pool.query('SELECT * from person'));
+
+let queryEnd = {
+    query: (text, params) => pool.query(text, params),
+    end: () => pool.end(),
+};
+
+export default queryEnd;

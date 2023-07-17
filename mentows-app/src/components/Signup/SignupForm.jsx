@@ -1,14 +1,14 @@
 import { React, useEffect, useState } from 'react';
-import express from 'express';
-import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config({ path: ".env" });
+// import express from 'express';
+// import axios from "axios";
+// import dotenv from "dotenv";
+// dotenv.config({ path: ".env" });
 // import { $ } from "jquery";
 
 // Express API 
-const pool = require("mentows-app/src/server/db.js");
-const app = express();
-const PORT = 5173;
+// const pool = require("mentows-app/src/server/db.js");
+// const app = express();
+// const PORT = 5173;
 
 // This is the main component that runs all the HTML elements
 const SignupForm = () => {
@@ -29,7 +29,12 @@ const SignupForm = () => {
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
+    
+    // Sends data to the server from the UI
+    useEffect(() => {
+        
+    })
 
     // Sets the nextClicked state variable to true after next is clicked
     const handleNextClicked = (event) => {
@@ -168,33 +173,33 @@ const SignupForm = () => {
         return phoneNumber;
     }
 
-    const getUsers = (req, res) => {
-        pool.query(`select * from useraccountinfo`, (error, users) => {
-            if (error)
-            {
-                throw error
-            }
-            res.status(200).json(users.row);
-        })
-    }
+    // const getUsers = (req, res) => {
+    //     pool.query(`select * from useraccountinfo`, (error, users) => {
+    //         if (error)
+    //         {
+    //             throw error
+    //         }
+    //         res.status(200).json(users.row);
+    //     })
+    // }
 
-    app.get("/", (req, res) => {
-        res.send("Hello world");
-    })
+    // app.get("/", (req, res) => {
+    //     res.send("Hello world");
+    // })
 
-    app.get("/Signup", getUsers);
+    // app.get("/Signup", getUsers);
 
-    app.listen(PORT, () => {
-        console.log(`Server listening on port ${PORT}`);
-    })
+    // app.listen(PORT, () => {
+    //     console.log(`Server listening on port ${PORT}`);
+    // })
 
     // Runs the necessary queries
-    useEffect(() => {
-        axios
-            .get('/Signup')
-            .then(res => res.data)
-            .then(data => setData(data))
-    }, []);
+    // useEffect(() => {
+    //     axios
+    //         .get('/Signup')
+    //         .then(res => res.data)
+    //         .then(data => setData(data))
+    // }, []);
 
 
     // // Gets the first and last name entered by the user
@@ -293,11 +298,12 @@ const SignupForm = () => {
                                             <input type="password" name="password" placeholder='Password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass} onChange={handlePassEntry} />
                                             <br />
                                             <br />
-                                            <input type="password" name="password2" placeholder='Confirm password' id="password" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass2} onChange={handlePass2Entry} />
+                                            <input type="password" name="password2" placeholder='Confirm password' id="password2" style={{ height: '40px', width: '340px', fontSize: '20px', cursor: "text" }} value={pass2} onChange={handlePass2Entry} />
                                             <br />
                                             <div style={{ marginTop: '10px' }}>
 
-                                                <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} onClick={handlePassMatch}>Next</button>
+                                                {/* Sends data to the server after next is clicked */}
+                                                <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} onClick={handlePassMatch}>Next</button> 
 
                                             </div>
                                         </div>
