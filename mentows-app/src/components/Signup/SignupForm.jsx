@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import { CallToServer } from '../../server/api';
 // import express from 'express';
 // import axios from "axios";
 // import dotenv from "dotenv";
@@ -33,8 +34,9 @@ const SignupForm = () => {
     
     // Sends data to the server from the UI
     useEffect(() => {
+        const userData = CallToServer(name, phone, email, username, pass, month, day, year);
         
-    })
+    }, [name, phone, email, username, pass, month, day, year]);
 
     // Sets the nextClicked state variable to true after next is clicked
     const handleNextClicked = (event) => {
