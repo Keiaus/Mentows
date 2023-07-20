@@ -9,10 +9,7 @@ const port = 5173;
 
 // Api call to the server
 export const CallToServer = (name, phone, email, username, pass, month, day, year) => {
-    // Tranfers user's input to the server
-    const insertData = `INSERT INTO useraccountinfo ()`
-
-    app.get("/Signup", (req, res) => {
-        req.query("INSERT INTO person ()VALUES ")
-    })
+    // Sends user's input to the server
+    const text = 'INSERT INTO useraccountinfo(userfirstname, ) VALUES($1, $2) RETURNING *';
+    
 }

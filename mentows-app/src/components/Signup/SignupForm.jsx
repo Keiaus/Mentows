@@ -70,7 +70,7 @@ const SignupForm = () => {
         const specialCharsRegex = /[!@#$%^&*(),.?":{}|<>]/;
 
         // Counts the special characters using regex
-        function countSpecialChars(str) {
+        const countSpecialChars = (str) => {
             return (str.match(specialCharsRegex) || []).length;
         }
 
@@ -175,61 +175,6 @@ const SignupForm = () => {
         return phoneNumber;
     }
 
-    // const getUsers = (req, res) => {
-    //     pool.query(`select * from useraccountinfo`, (error, users) => {
-    //         if (error)
-    //         {
-    //             throw error
-    //         }
-    //         res.status(200).json(users.row);
-    //     })
-    // }
-
-    // app.get("/", (req, res) => {
-    //     res.send("Hello world");
-    // })
-
-    // app.get("/Signup", getUsers);
-
-    // app.listen(PORT, () => {
-    //     console.log(`Server listening on port ${PORT}`);
-    // })
-
-    // Runs the necessary queries
-    // useEffect(() => {
-    //     axios
-    //         .get('/Signup')
-    //         .then(res => res.data)
-    //         .then(data => setData(data))
-    // }, []);
-
-
-    // // Gets the first and last name entered by the user
-    // const fullName = $('#name').val().split(' ');
-    // const firstName = fullName.shift();
-    // const lastName = fullName.join(' ');
-
-    // // Gets the user's date of birth
-    // const birthday = `${month}/${day}/${year}`;
-
-    // async function insertData() {
-    //     try {
-    //         const insertUserData = `INSERT INTO useraccountinfo (userfirstname, userlastname, userusername, useremail, userphone, userdob, userpassword) 
-    //                                 VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
-    //         const values = [firstName, lastName, username, email, phone, birthday, pass2];
-    //         const result = await C.query(insertUserData, values);
-    //         console.log(result.rows);
-    //     } catch (error) {
-    //         console.error('Error executing query:', error);
-    //     }
-
-    //     C.end();
-    // }
-
-    // insertData();
-
-
-
     // Returns sign up page after next is clicked
     if (nextClicked) {
 
@@ -238,6 +183,7 @@ const SignupForm = () => {
         const daySelect = day;
         const yearSelect = year;
         const formattedString = `${monthSelect} ${daySelect}, ${yearSelect}`;
+        const invalidChars = /[;'/*_-]/;
 
         // Returns sign up page after yes is clicked
         if (yesClicked) {
