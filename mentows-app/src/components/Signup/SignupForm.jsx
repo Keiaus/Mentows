@@ -30,18 +30,24 @@ const SignupForm = () => {
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
-    // const [data, setData] = useState([]);
-    
+
     // Sends data to the server from the UI
     useEffect(() => {
         const userData = CallToServer(name, phone, email, username, pass, month, day, year);
-        
+
     }, [name, phone, email, username, pass, month, day, year]);
 
     // Sets the nextClicked state variable to true after next is clicked
     const handleNextClicked = (event) => {
         event.preventDefault();
         setNextClicked(true);
+        const invalidChars = /[!@#$%^&*(),.?":{}|<>;'/_-]/;
+        
+        // Checks to see if the name entry has invalid characters
+        if (name.includes(invalidChars))
+        {
+            return 
+        }
     }
 
     // Sets the yesClicked state variable to true after yes is clicked
@@ -51,6 +57,8 @@ const SignupForm = () => {
         if (!yesClicked) {
             setYesClicked(true);
         }
+
+
     }
 
     // Sets the nextClicked state variable to false after one second allowing a back option
@@ -183,7 +191,6 @@ const SignupForm = () => {
         const daySelect = day;
         const yearSelect = year;
         const formattedString = `${monthSelect} ${daySelect}, ${yearSelect}`;
-        const invalidChars = /[;'/*_-]/;
 
         // Returns sign up page after yes is clicked
         if (yesClicked) {
@@ -251,7 +258,7 @@ const SignupForm = () => {
                                             <div style={{ marginTop: '10px' }}>
 
                                                 {/* Sends data to the server after next is clicked */}
-                                                <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} onClick={handlePassMatch}>Next</button> 
+                                                <button type='submit' id='next-in-yes' style={{ height: '40px', width: '150px', fontSize: '20px', marginTop: '50px', borderRadius: '3%', cursor: 'pointer' }} onClick={handlePassMatch}>Next</button>
 
                                             </div>
                                         </div>
@@ -601,28 +608,6 @@ const SignupForm = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* <div className='container my-5' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <table className='table table-striped'>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data.map(item => {
-                                    <tr key={item.name}>
-                                        <td>{item.username}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.phone}</td>
-                                    </tr>
-                                })}
-                            </tbody>
-                        </table>
-                    </div> */}
                 </div>
             </form>
         </>
