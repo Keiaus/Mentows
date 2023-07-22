@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import { CallToServer } from '../../server/api';
+import { hashPass } from '../../../hashBuddy';
 // import express from 'express';
 // import axios from "axios";
 // import dotenv from "dotenv";
@@ -41,13 +42,26 @@ const SignupForm = () => {
     const handleNextClicked = (event) => {
         event.preventDefault();
         setNextClicked(true);
-        const invalidChars = /[!@#$%^&*(),.?":{}|<>;'/_-]/;
-        
-        // Checks to see if the name entry has invalid characters
-        if (name.includes(invalidChars))
-        {
-            return 
+        const invalidChars = "!@#$%^&*(),.?\":{}|<>;\"'/_-";
+        const invalidCharSet = new Set(invalidChars);
+        const nameArray = Array.from(name);
+        const phoneArray = Array.from(phone);
+
+        if (nameArray.some(output => invalidCharSet.has(output))) {
+            alert("Cannot use these characters - " + invalidChars);
+            setNextClicked(false);
         }
+
+        if (phoneArray.some(output => invalidCharSet.has(output))) {
+            alert("Cannot use special characters - " + invalidChars);
+            setNextClicked(false);
+        }
+
+        // Checks to see if the name entry has invalid characters
+        // if (name.includes(invalidChars))
+        // {
+        //     setNextClicked(false);
+        // }
     }
 
     // Sets the yesClicked state variable to true after yes is clicked
@@ -57,8 +71,6 @@ const SignupForm = () => {
         if (!yesClicked) {
             setYesClicked(true);
         }
-
-
     }
 
     // Sets the nextClicked state variable to false after one second allowing a back option
@@ -76,10 +88,19 @@ const SignupForm = () => {
         const minPasswordLength = 10;
         const minSpecialChars = 1;
         const specialCharsRegex = /[!@#$%^&*(),.?":{}|<>]/;
+        const invalidChars = ";'-/_";
+        const invalidCharSet = new Set(invalidChars);
+        const invalidCharArray = Array.from(pass);
 
         // Counts the special characters using regex
         const countSpecialChars = (str) => {
             return (str.match(specialCharsRegex) || []).length;
+        }
+
+        if (invalidCharArray.some(output => invalidCharSet.has(output)))
+        {
+            alert("Password cannot contain these characters - " + invalidChars);
+            setNextInYesClicked(false);
         }
 
         if (pass !== pass2) {
@@ -106,6 +127,8 @@ const SignupForm = () => {
             alert("Password must contain atleast one numeric value");
             setNextInYesClicked(false);
         }
+
+        hashPass(pass);
     }
 
     // Sets the yesInYesClicked state variable to true
