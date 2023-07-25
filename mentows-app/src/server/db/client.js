@@ -17,9 +17,7 @@ await pool.connect();
 
 console.log(await pool.query('SELECT * from person'));
 
-let queryEnd = {
+export const queryEnd = {
     query: (text, params) => pool.query(text, params),
     end: () => pool.end(),
 };
-
-export default queryEnd;
