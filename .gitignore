@@ -4,4 +4,3 @@ node_modules
 db.json
 package-lock.json
 envPathURL.js
-hashAssist.js
