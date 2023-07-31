@@ -15,9 +15,11 @@ export const pool = new Pool({
 
 await pool.connect();
 
-console.log(await pool.query('SELECT * from person'));
+//
 
-export const queryEnd = {
-    query: (text, params) => pool.query(text, params),
-    end: () => pool.end(),
-};
+// console.log(await pool.query('SELECT * from useraccountinfo'));
+
+// export const queryEnd = {
+//     query: (text, params) => pool.query(text, params),
+//     end: () => pool.end(),
+// };

@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import { CallToServer } from '../../server/api';
-import { hashPass } from '../../../hashBuddy';
+import hashPass from '../../server/db/hashAssist';
 // import express from 'express';
 // import axios from "axios";
 // import dotenv from "dotenv";
