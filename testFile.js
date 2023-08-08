@@ -10,7 +10,8 @@
 // console.log("Cannot use these characters - " + tester);
 
 const addTwoNums = (x, y) => {
-    console.log(x + y);
+    const res = x + y;
+    console.log(res);
 }
 
-addTwoNums(6, 0);
+addTwoNums(10, 10);

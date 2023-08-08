@@ -1,6 +1,6 @@
 import { pool } from './client';
-import { createRequire } from 'node:module';
-const require = createRequire(import.meta.url);
+// import { createRequire } from 'node:module';
+// const require = createRequire(import.meta.url);
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -8,11 +8,18 @@ const saltRounds = 10;
 const hashPass = (password) => {
     bcrypt.genSalt(saltRounds, (error, salt) => {
         bcrypt.hash(password, salt, (error, hash) => {
-            // Sends hash to the database
-            const insertHash = `INSERT INTO useraccountinfo(userpassword) VALUES ($1) RETURNING *`;
+            // Sends the hashed password to the database
+            const insertHashedPass = `INSERT INTO useraccountinfo(userpassword) VALUES ($1)`;
             const value = [`${hash}`];
-            const res = pool.query(insertHash, value);
-            console.log(res.rows[0]);
+            pool.query(insertHashedPass, value)
+            {
+                if (error)
+                {
+                    throw error;
+                }
+
+                console.log("1 record inserted");
+            }
         })
         // returns salt
     })

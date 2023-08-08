@@ -1,9 +1,9 @@
 import { envURL } from '../envPathURL.js';
-import { createRequire } from 'node:module';
+// import { createRequire } from 'node:module';
 import process from 'node:process';
 const require = createRequire(import.meta.url);
-const { Pool } = require("pg");
 require('dotenv').config({ path: envURL });
+const { Pool } = require("pg");
 
 export const pool = new Pool({
     user: process.env.PGUSER,
